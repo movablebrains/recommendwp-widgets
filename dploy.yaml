@@ -1,0 +1,32 @@
+dev:
+    scheme: ftp
+    host: ftp.buildbyninja.com
+    port: 21
+    user: suptest
+    pass: makeitbreakit2
+    check: true
+    path:
+        local: /
+        remote: public_html/freshsmile/wp-content/plugins/recommendwp-shortcodes/
+
+stage:
+    scheme: ftp
+    host: ftp.my-stage-server.com
+    port: 21
+    user: user
+    pass: password
+    check: true
+    path:
+        local: release/
+        remote: public_html/
+
+live:
+    scheme: ftp
+    host: ftp.my-live-server.com
+    port: 21
+    user: user
+    pass: password
+    check: true
+    path:
+        local: release/
+        remote: public_html/

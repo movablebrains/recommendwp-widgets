@@ -1,0 +1,114 @@
+// Imports
+@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+
+// Variables
+// $button-font: "Open Sans", sans-serif;
+// $button-font-weight: 700;
+// $button-color: #FF8400;
+// $body-color: #666;
+
+// Extends
+// Font Weight, Style, Text Transform, Alignment
+$weights: (thin, 100), (extralight, 200), (light, 300), (normal, 400), (medium, 500), (semibold, 600), (bold, 700), (extrabold,800), (heavy, 900);
+$styles: italic, oblique, normal, inherit, initial, unset;
+$transforms: capitalize, uppercase, lowercase, none, full-width;
+$alignments: none, left, right, center;
+$displays: inline, inline-block, table, table-cell, flex, none, unset;
+
+// Font Weight
+@each $weight, $value in $weights {
+	.text-#{$weight} {
+		font-weight: $value;
+	}
+}
+
+// Font Style
+@each $style in $styles {
+	.text-#{$style} {
+		font-style: $style;
+	}
+}
+
+// Text Transform
+@each $transform in $transforms {
+	.text-#{$transform} {
+		text-transform: $transform;
+	}
+}
+
+// Text Alignment
+@each $alignment in $alignments {
+	.text-#{$alignment} {
+		text-align: $alignment;
+	}
+}
+
+// Display
+@each $display in $displays {
+	.display-#{$display} {
+		display: $display;
+	}
+} 
+
+//* Icons & Type Alignment Fix
+// @link http://snook.ca/archives/html_and_css/icons-and-type
+@mixin icon-type {
+	display: inline-block;
+	position: relative;
+	top: -0.1em;
+	vertical-align: middle;
+}
+
+@mixin button {
+	text-transform: uppercase;
+	// color: $button-color;
+	display: inline-block;
+	margin-bottom: 0; // For input.btn
+	// font-family: $button-font;
+	// font-weight: $button-font-weight;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	border: 1px solid transparent;
+	white-space: nowrap;
+	line-height: 1;	
+}
+
+//* Vertical Mixin
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin bourbon-align {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	@include prefixer(box-align, center, webkit moz ms spec);
+	-ms-flex-align: center;
+	@include prefixer(align-items, center, webkit spec);
+	@include prefixer(box-pack, center, webkit moz);
+	-ms-flex-pack: center;
+	@include prefixer(justify-content, center, webkit spec);
+}
+
+.widget_rwpw-image-carousel {
+	.owl-carousel {
+		.owl-item {
+			& > div {
+				@include vertical-align;
+			}
+			img {
+				width: auto !important;
+				margin: 0 auto;
+			}
+		}
+	}
+}

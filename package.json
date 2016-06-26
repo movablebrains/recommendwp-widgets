@@ -1,0 +1,36 @@
+{
+  "name": "recommendwp-shortcodes",
+  "version": "1.0.0",
+  "description": "A collection of shortcodes for WordPress built using the Shortcodes Ultimate plugin API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/webdevsuperfast/recommendwp-shortcodes/"
+  },
+  "keywords": [
+    "shortcodes-ultimate",
+    "recommendwp",
+    "shortcode"
+  ],
+  "author": "RecommendWP",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cache": "^0.4.5",
+    "gulp-clean-css": "^2.0.9",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-jsbeautifier": "^2.0.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "vinyl-paths": "^2.1.0"
+  }
+}

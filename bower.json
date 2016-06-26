@@ -1,0 +1,28 @@
+{
+  "name": "recommendwp-widgets",
+  "authors": [
+    "RecommendWP"
+  ],
+  "description": "A collection of widgets for WordPress built using the SiteOrigin Widgets API.",
+  "main": "",
+  "keywords": [
+    "siteorigin-widgets",
+    "recommendwp",
+    "widget"
+  ],
+  "license": "GPLv3",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "owl.carousel": "^2.1.6",
+    "veinjs": "*",
+    "bourbon": "^4.2.7"
+  }
+}
