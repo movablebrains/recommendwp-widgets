@@ -35,15 +35,15 @@ class RecommendWP_Widgets {
     public function rwpw_enqueue_scripts() {
         if ( ! is_admin() ) {
             // Widget CSS
-            wp_register_style( 'rwpw-widget-css', plugin_dir_url( __FILE__ ) . 'css/widget.css' );
-            wp_enqueue_style( 'rwpw-widget-css' );
+            wp_register_style( 'recommendwp-widgets-css', plugin_dir_url( __FILE__ ) . 'css/widget.css' );
+            wp_enqueue_style( 'recommendwp-widgets-css' );
 
             // Vendor JS
-            wp_register_script( 'rwpw-vendor-js', plugin_dir_url( __FILE__ ) . 'js/vendor.min.js', array( 'jquery' ), null, true );
-            wp_enqueue_script( 'rwpw-vendor-js' );
+            wp_register_script( 'recommendwp-widgets-vendor-js', plugin_dir_url( __FILE__ ) . 'js/vendor.min.js', array( 'jquery' ), null, true );
+            wp_enqueue_script( 'recommendwp-widgets-vendor-js' );
 
             // Widget JS
-            wp_register_script( 'rwpw-widget-js', plugin_dir_url( __FILE__ ) . 'js/widget.js', array( 'jquery' ), null, true );
+            wp_register_script( 'recommendwp-widgets-js', plugin_dir_url( __FILE__ ) . 'js/widget.js', array( 'jquery' ), null, true );
         }
     }
 

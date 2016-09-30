@@ -29,7 +29,6 @@ gulp.task('source:css', function(){
 // Vendor JS
 gulp.task('vendor:js', function(){
     return gulp.src([
-        'bower_components/veinjs/vein.js',
         'bower_components/owl.carousel/dist/owl.carousel.js'
     ])
     .pipe(concat('vendor.js'))

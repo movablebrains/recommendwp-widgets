@@ -1,11 +1,11 @@
+// Variables
+$slick-font-path: '../fonts/slick/';
+$slick-loader-path: '../images/';
+
 // Imports
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
-
-// Variables
-// $button-font: "Open Sans", sans-serif;
-// $button-font-weight: 700;
-// $button-color: #FF8400;
-// $body-color: #666;
+@import '../bower_components/neat/app/assets/stylesheets/neat';
+@import '../bower_components/slick-carousel/slick/slick-theme.scss';
 
 // Extends
 // Font Weight, Style, Text Transform, Alignment
@@ -48,7 +48,7 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 	.display-#{$display} {
 		display: $display;
 	}
-} 
+}
 
 //* Icons & Type Alignment Fix
 // @link http://snook.ca/archives/html_and_css/icons-and-type
@@ -73,7 +73,7 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 	border: 1px solid transparent;
 	white-space: nowrap;
-	line-height: 1;	
+	line-height: 1;
 }
 
 //* Vertical Mixin
@@ -110,5 +110,44 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 				margin: 0 auto;
 			}
 		}
+	}
+}
+
+/* Side Image Widget
+----------------------------------------------------------------------------- */
+.widget_rwpw-side-image {
+	$large-screen: 1200px;
+	$gutter: 30px;
+	.side-image {
+		@include media($large-screen) {
+			@include row(table);
+		}
+		.images-wrapper {
+			background-size: cover;
+			display: block;
+			padding: $gutter*2;
+			@include media($large-screen) {
+				@include span-columns(4);
+				background-size: cover;
+				background-position: bottom;
+			}
+		}
+		.side-image-content {
+			@include span-columns(12);
+			padding: $gutter*2;
+			@include media($large-screen) {
+				@include span-columns(8);
+			}
+			.widgettitle {
+				background: #BBB;
+				color: white;
+				display: inline-block;
+				font-size: 0.75em;
+				margin-bottom: 1.3em;
+				padding: 3px 8px;
+				text-transform: uppercase;
+			}
+		}
+		@include reset-display;
 	}
 }

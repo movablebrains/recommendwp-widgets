@@ -159,7 +159,7 @@ class Image_Carousel_Widget extends SiteOrigin_Widget {
     }
 
     function get_template_name( $instance ) {
-        return 'image-carousel-template';
+        return 'default';
     }
 
     function get_style_name( $instance ) {

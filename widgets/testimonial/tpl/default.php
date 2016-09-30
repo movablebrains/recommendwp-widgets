@@ -44,10 +44,8 @@ echo '<div class="testimonial-widget">';
     $attributes['slidestablet'] = $options['slides_tablet'] ? (int) $options['slides_tablet'] : (int) $slides;
     $attributes['loop'] = $options['loop'] == true ? 'true' : 'false';
 
-
-    wp_enqueue_script( 'rwpw-widget-js' );
-    wp_localize_script( 'rwpw-widget-js', 'testimonial' . (int)$widget_id, $attributes ); ?>
+    wp_enqueue_script( 'recommendwp-widgets-js' );
+    wp_localize_script( 'recommendwp-widgets-js', 'testimonial' . (int)$widget_id, $attributes ); ?>
     
-
-
-<?php echo '</div>';
+      
+</div>

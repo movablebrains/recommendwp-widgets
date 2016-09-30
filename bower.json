@@ -22,7 +22,8 @@
   ],
   "dependencies": {
     "owl.carousel": "^2.1.6",
-    "veinjs": "*",
-    "bourbon": "^4.2.7"
+    "bourbon": "^4.2.7",
+    "neat": "^1.8.0",
+    "slick-carousel": "^1.6.0"
   }
 }

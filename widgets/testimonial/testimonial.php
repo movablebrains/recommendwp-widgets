@@ -1,18 +1,18 @@
 <?php
 /*
-Widget Name: Testimonial
-Description: A simple image carousel widget.
+Widget Name: RecommendWP Testimonial
+Description: A simple testimonial widget using Owl Carousel.
 Author: RecommendWP
 Author URI: http://www.recommendwp.com
 */
 
-class Testimonial_Widget extends SiteOrigin_Widget {
+class RWP_Testimonial_Widget extends SiteOrigin_Widget {
     function __construct() {
         parent::__construct(
             'rwpw-testimonial',
-            __( 'Testimonial', 'rwpw' ),
+            __( 'RecommendWP Testimonial', 'recommendwp-widgets' ),
             array(
-                'description' => __( 'A simple image carousel widget', 'rwpw' ),
+                'description' => __( 'A simple image carousel widget', 'recommendwp-widgets' ),
                 'help' => ''
             ),
             array(
@@ -21,137 +21,141 @@ class Testimonial_Widget extends SiteOrigin_Widget {
             array(
 				'title' => array(
 					'type' => 'text',
-					'label' => __('Title', 'rwpw'),
+					'label' => __('Title', 'recommendwp-widgets'),
 					'default' => ''
 				),
 				'testimonial_settings' => array(
 					'type' => 'section',
-					'label' => __( 'Testimonial Settings', 'rwpw' ),
+					'label' => __( 'Testimonial Settings', 'recommendwp-widgets' ),
 					'hide' => true,
 					'fields' => array(
 						'numpost' => array(
 							'type' => 'number',
-							'label' => __( 'Number of testimonial to show', 'rwpw' ),
+							'label' => __( 'Number of testimonial to show', 'recommendwp-widgets' ),
 							'default' => 3
 						),
 						'order' => array(
 							'type' => 'select',
-							'label' => __( 'Sort Order', 'rwpw' ),
+							'label' => __( 'Sort Order', 'recommendwp-widgets' ),
 							'options' => array(
-								'ASC' => __( 'Ascending', 'rwpw' ),
-								'DESC' => __( 'Descending', 'rwpw' ),
+								'ASC' => __( 'Ascending', 'recommendwp-widgets' ),
+								'DESC' => __( 'Descending', 'recommendwp-widgets' ),
 							),
 							'default' => 'ASC'
 						),
 						'orderby' => array(
 							'type' => 'select',
-							'label' => __( 'Sort by', 'rwpw' ),
+							'label' => __( 'Sort by', 'recommendwp-widgets' ),
 							'options' => array(
-								'title' => __( 'Title', 'rwpw' ),
-								'date' => __( 'Date', 'rwpw' ) 
+								'title' => __( 'Title', 'recommendwp-widgets' ),
+								'date' => __( 'Date', 'recommendwp-widgets' ) 
 							),
 							'default' => 'date'
 						),
 						'imagex' => array(
 							'type' => 'number',
-							'label' => __( 'Image Width', 'rwpw' ),
+							'label' => __( 'Image Width', 'recommendwp-widgets' ),
 							'default' => ''
 						),
 						'imagey' => array(
 							'type' => 'number',
-							'label' => __( 'Image Height(optional)', 'rwpw' ),
+							'label' => __( 'Image Height(optional)', 'recommendwp-widgets' ),
 							'default' => ''
 						),
 					)
 				),
 				'slider_options' => array(
 					'type' => 'section',
-					'label' => __( 'Slideshow Settings', 'rwpw' ),
+					'label' => __( 'Slideshow Settings', 'recommendwp-widgets' ),
 					'hide' => true,
 					'fields' => array(
 						'class' => array(
 							'type' => 'text',
-							'label' => __( 'Class', 'rwpw' ),
+							'label' => __( 'Class', 'recommendwp-widgets' ),
 							'default' => ''
 						),
 						'slides' => array(
 							'type' => 'number',
 							'default' => 4,
-							'label' => __( 'Slides', 'rwpw' )
+							'label' => __( 'Slides', 'recommendwp-widgets' )
 						),
 						'slides_tablet' => array(
 							'type' => 'number',
 							'default' => 3,
-							'label' => __( 'Slides Tablet', 'rwpw' )
+							'label' => __( 'Slides Tablet', 'recommendwp-widgets' )
 						),
 						'slides_mobile' => array(
 							'type' => 'number',
 							'default' => 1,
-							'label' => __( 'Slides Tablet', 'rwpw' )
+							'label' => __( 'Slides Tablet', 'recommendwp-widgets' )
 						),
 						'margin' => array(
 							'type' => 'number',
 							'default' => 0,
-							'label' => __( 'Slide margin', 'rwpw' ),
+							'label' => __( 'Slide margin', 'recommendwp-widgets' ),
 						),
 						'duration' => array(
 							'type' => 'number',
 							'default' => 250,
-							'label' => __( 'Duration', 'rwpw' ),
+							'label' => __( 'Duration', 'recommendwp-widgets' ),
 						),
 						'speed' => array(
 							'type' => 'number',
 							'default' => 250,
-							'label' => __( 'Speed', 'rwpw' ),
+							'label' => __( 'Speed', 'recommendwp-widgets' ),
 						),
 						'autoplay' => array(
 							'type' => 'checkbox',
 							'default' => false,
-							'label' => __( 'Enable autoplay?', 'rwpw' ),
+							'label' => __( 'Enable autoplay?', 'recommendwp-widgets' ),
 						),
 						'navigation' => array(
 							'type' => 'checkbox',
 							'default' => false,
-							'label' => __( 'Display navigation?', 'rwpw' ),
+							'label' => __( 'Display navigation?', 'recommendwp-widgets' ),
 						),
 						'pagination' => array(
 							'type' => 'checkbox',
 							'default' => false,
-							'label' => __( 'Display pagination?', 'rwpw' ),
+							'label' => __( 'Display pagination?', 'recommendwp-widgets' ),
 						),
 						'autoheight' => array(
 							'type' => 'checkbox',
 							'default' => false,
-							'label' => __( 'Enable autoheight?', 'rwpw' ),
+							'label' => __( 'Enable autoheight?', 'recommendwp-widgets' ),
 						),
 						'autowidth' => array(
 							'type' => 'checkbox',
 							'default' => false,
-							'label' => __( 'Enable autowidth?', 'rwpw' ),
+							'label' => __( 'Enable autowidth?', 'recommendwp-widgets' ),
 						),
 						'center' => array(
 							'type' => 'checkbox',
 							'default' => false,
-							'label' => __( 'Center item', 'rwpw' ),
+							'label' => __( 'Center item', 'recommendwp-widgets' ),
 						),
 						'mergefit' => array(
 							'type' => 'checkbox',
 							'default' => true,
-							'label' => __( 'Fit merged items?', 'rwpw' ),
+							'label' => __( 'Fit merged items?', 'recommendwp-widgets' ),
 						),
 						'loop' => array(
 							'type' => 'checkbox',
 							'default' => true,
-							'label' => __( 'Loop items?', 'rwpw' )
+							'label' => __( 'Loop items?', 'recommendwp-widgets' )
 						)
 					)
 				),
 				'template' => array(
 					'type' => 'select',
-					'label' => __( 'Choose template', 'rwpw' ),
+					'label' => __( 'Choose template', 'recommendwp-widgets' ),
 					'options' => array(
-						'basic' => __( 'Basic', 'rwpw' ),
-					)
+						'no-image' => __( 'No featured image', 'recommendwp-widgets' ),
+						'top-image' => __( 'Featured image on top', 'recommendwp-widgets' ),
+						'bottom-image' => __( 'Featured image on bottom', 'recommendwp-widgets' ),
+						'left-image' => __( 'Featured image on left', 'recommendwp-widgets' )
+					),
+					'default' => 'no-image'
 				)
 			),
 
@@ -160,12 +164,12 @@ class Testimonial_Widget extends SiteOrigin_Widget {
     }
 
     function get_template_name( $instance ) {
-        return 'testimonial-template';
+        return 'default';
     }
 
     function get_style_name( $instance ) {
-        return '';
+        return 'default';
     }
 }
 
-siteorigin_widget_register( 'rwpw-testimonial', __FILE__, 'Testimonial_Widget' );
+siteorigin_widget_register( 'rwpw-testimonial', __FILE__, 'RWP_Testimonial_Widget' );
