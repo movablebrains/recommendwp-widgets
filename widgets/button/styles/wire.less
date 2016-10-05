@@ -1,0 +1,30 @@
+@background: #323232;
+@background_hover: darken(@background, 15%);
+@border_radius: 3px;
+@border: 1px;
+@padding: 10px;
+@icon_color: #fff;
+@icon_hover: #fff;
+@width: auto;
+@text_color: #fff;
+@text_hover: #fff;
+@text_size: 16px;
+
+.btn {
+    background-color: transparent;
+    border-color: @background;
+    border-radius: @border_radius;
+    border-width: @border;
+    color: @text_color;
+    font-size: @text_size;
+    padding: @padding;
+    width: @width;
+    &:hover {
+        background-color: @background_hover;
+        border-color: @background_hover;
+        color: @text_hover;
+        [class^="sow-icon"] {
+            color: @icon_hover !important;
+        }
+    }
+}
