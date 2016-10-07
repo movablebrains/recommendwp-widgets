@@ -20,7 +20,7 @@ class Image_Carousel_Widget extends SiteOrigin_Widget {
             ),
             false,
             plugin_dir_path( __FILE__ ) . 'widgets'
-        ); 
+        );
     }
 
 	function get_widget_form() {
@@ -169,8 +169,8 @@ class Image_Carousel_Widget extends SiteOrigin_Widget {
         return '';
     }
 
-	function get_template_variables( $instance ) {
-		
+	function get_template_variables( $instance, $args ) {
+
 	}
 }
 

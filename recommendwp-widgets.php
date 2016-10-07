@@ -35,22 +35,22 @@ class RecommendWP_Widgets {
     public function rwpw_enqueue_scripts() {
         if ( ! is_admin() ) {
             // Widget CSS
-            wp_register_style( 'recommendwp-widgets-css', plugin_dir_url( __FILE__ ) . 'css/widget.css' );
-            wp_enqueue_style( 'recommendwp-widgets-css' );
+            wp_register_style( 'rwpw-css', plugin_dir_url( __FILE__ ) . 'css/widget.css' );
+            wp_enqueue_style( 'rwpw-css' );
 
             // Vendor JS
-            wp_register_script( 'recommendwp-widgets-vendor-js', plugin_dir_url( __FILE__ ) . 'js/vendor.min.js', array( 'jquery' ), null, true );
-            wp_enqueue_script( 'recommendwp-widgets-vendor-js' );
+            wp_register_script( 'rwpw-owl-carousel-js', plugin_dir_url( __FILE__ ) . 'js/owl.carousel.min.js', array( 'jquery' ), null, true );
+            // wp_enqueue_script( 'recommendwp-widgets-vendor-js' );
 
             // Widget JS
-            wp_register_script( 'recommendwp-widgets-js', plugin_dir_url( __FILE__ ) . 'js/widget.js', array( 'jquery' ), null, true );
+            wp_register_script( 'rwpw-widgets-js', plugin_dir_url( __FILE__ ) . 'js/widget.js', array( 'jquery' ), null, true );
         }
     }
 
     public function rwpw_widget_folders( $folders ) {
         $folders[] = plugin_dir_path( __FILE__ ) . 'widgets/';
 
-        return $folders; 
+        return $folders;
     }
 
     public function rwpw_widget_args( $args ) {

@@ -11,6 +11,9 @@ var gulp = require('gulp'),
     prettify = require('gulp-jsbeautifier'),
     concatcss = require('gulp-concat-css'),
     uglify = require('gulp-uglify'),
+    foreach = require('gulp-flatmap'),
+    changed = require('gulp-changed'),
+    vinylpaths = require('vinyl-paths'),
     del = require('del');
 
 // CSS
@@ -31,12 +34,15 @@ gulp.task('vendor:js', function(){
     return gulp.src([
         'bower_components/owl.carousel/dist/owl.carousel.js'
     ])
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest('temp/js'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+    .pipe(foreach(function(stream, file){
+        return stream
+            .pipe(changed('temp/js'))
+            .pipe(uglify())
+            .pipe(rename({suffix: '.min'}))
+            .pipe(gulp.dest('temp/js'))
+    }))
     .pipe(gulp.dest('js'))
-    .pipe(notify({ message: 'Vendor scripts task complete' }));
+    .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 // Clean temp folder

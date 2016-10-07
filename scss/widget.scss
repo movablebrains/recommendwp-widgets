@@ -5,7 +5,9 @@ $slick-loader-path: '../images/';
 // Imports
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../bower_components/neat/app/assets/stylesheets/neat';
-@import '../bower_components/slick-carousel/slick/slick-theme.scss';
+
+// Owl Carousel
+@import "../bower_components/owl.carousel/src/scss/owl.carousel.scss";
 
 // Extends
 // Font Weight, Style, Text Transform, Alignment
@@ -249,3 +251,19 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 
 /* Features Widget
 ----------------------------------------------------------------------------- */
+
+/** ## Testimonial Widget
+----------------------------------------------------------------------------- */
+.widget_rwpw-testimonial {
+	.owl-carousel {
+		.owl-item {
+			& > div {
+				// @include vertical-align;
+			}
+			img {
+				width: auto !important;
+				margin: 0 auto;
+			}
+		}
+	}
+}

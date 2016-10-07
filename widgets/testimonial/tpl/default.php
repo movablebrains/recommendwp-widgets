@@ -1,51 +1,82 @@
 <?php
-$title = $instance['title'];
-
 if ( $title ) {
     echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
 }
 
 $widget_id = $args['widget_id'];
-
 $widget_id = preg_replace( '/[^0-9]/', '', $widget_id );
 
-echo '<div class="testimonial-widget">';
-    $options = $instance['slider_options'];
-    $settings = $instance['testimonial_settings'];
+$attributes = array();
 
-    $classes = array();
+$classes = array();
+$classes[] = 'rwpw-testimonial';
+$classes[] = 'owl-carousel';
+$classes[] = 'owl-theme';
+$classes[] = $class;
 
-    $classes[] = 'rwpw-testimonial';
-    $classes[] = 'owl-carousel';
-    $classes[] = $options['class'] ? ' ' . $options['class'] : '';
+$attributes = array(
+    'class' => esc_attr( implode( ' ', $classes ) ),
+    'id' => 'testimonial-' . (int)$widget_id,
+    'data-instance' => (int)$widget_id
+); ?>
 
-    $attr = array(
-        'id' => 'testimonial-' . (int)$widget_id,
-        'class' => esc_attr( implode( ' ', $classes ) ),
-        'data-instance' => (int)$widget_id
-    );
+<?php $post_args = array(
+    'post_type' => 'testimonial',
+    'posts_per_page' => $numpost,
+    'order' => $order,
+    'orderby' => $orderby
+);
 
-    $attributes = array();
-        
-    $attributes['items'] = (int) $options['slides'];
+$vars = array(
+    'id' => 'testimonial-' . (int)$widget_id,
+    'items' => (int)$slides,
+    'margin' => (int)$margin,
+    'duration' => (int)$duration,
+    'speed' => (int)$speed,
+    'autoplay' => $autoplay == true ? "true" : "false",
+    'navigation' => $navigation == true ? "true" : "false",
+    'pagination' => $pagination == true ? "true" : "false",
+    'autowidth' => $autowidth == true ? "true" : "false",
+    'autoheight' => $autoheight == true ? "true" : "false",
+    'center' => $center == true ? "true" : "false",
+    'mergefit' => $mergefit == true ? "true" : "false",
+    'loop' => $loop == true ? "true" : "false",
+    'slidesMobile' => (int)$slides_mobile,
+    'slidesTablet' => (int)$slides_tablet
+);
 
-    $attributes['navigation'] = $options['navigation'] == true ? 'true' : 'false';
-    $attributes['pagination'] = $options['pagination'] == true ? 'true' : 'false';
-    $attributes['autoplay'] = $options['autoplay'] == true ? 'true' : 'false';
-    $attributes['smartspeed'] = $options['duration'] ? (int) $options['duration'] : '250';
-    $attributes['fluidspeed'] = $options['speed'] ? (int) $options['speed'] : '250';
-    $attributes['autoheight'] = $options['autoheight'] == true ? 'true' : 'false';
-    $attributes['autowidth'] = $options['autowidth'] == true ? 'true' : 'false';
-    $attributes['mergefit'] = $options['mergefit'] == true ? 'true' : 'false';
-    $attributes['center'] = $options['center'] == true ? 'true' : 'false';
-    $attributes['margin'] = $options['margin'];
-    $attributes['id'] = 'testimonial-' . (int) $widget_id;
-    $attributes['slidesmobile'] = $options['slides_mobile'] ? (int) $options['slides_mobile'] : (int) $slides;
-    $attributes['slidestablet'] = $options['slides_tablet'] ? (int) $options['slides_tablet'] : (int) $slides;
-    $attributes['loop'] = $options['loop'] == true ? 'true' : 'false';
+$loop = new WP_Query( $post_args ); ?>
 
-    wp_enqueue_script( 'recommendwp-widgets-js' );
-    wp_localize_script( 'recommendwp-widgets-js', 'testimonial' . (int)$widget_id, $attributes ); ?>
+<?php if ( $loop->have_posts() ) : ?>
+    <?php 
+    wp_enqueue_script( 'rwpw-owl-carousel-js' );
+    wp_enqueue_script( 'rwpw-widgets-js' ); 
+    wp_localize_script('rwpw-widgets-js', 'testimonial' . $widget_id, $vars ); 
+    ?>
+
+    <div <?php foreach( $attributes as $name => $value ) echo $name . '="' . $value . '" ' ?>>
+    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        <?php $thumb_id = get_post_thumbnail_id();
+            $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full', true);
+            $thumb_url = $thumb_url_array[0];
+            $image = rwpw_thumb( $thumb_url, $width, $height ); ?>
+        <div class="testimonial-wrapper">
+            <div class="testimonial-copy">
+                <?php if ( $image ) : ?>
+                    <div class="testimonial-image">
+                        <img src="<?php echo $image; ?>" alt="" />
+                    </div>
+                <?php endif; ?>
+                <div class="testimonial-content">
+                    <?php echo wpautop( get_the_content(), false); ?>
+                    <?php echo '<h4>' . apply_filters( 'rwpw_testimonial_title', get_the_title(), $postid ) . '</h4>'; ?>
+                </div>
+            </div>
+        </div>
+    <?php endwhile; ?>
     
-      
-</div>
+    <?php else : ?>
+        <?php echo __( 'No testimonials found.', 'recommendwp-widgets' ); ?>
+    
+    </div>
+    <?php endif; ?>
