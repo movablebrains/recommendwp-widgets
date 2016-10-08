@@ -74,7 +74,8 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 	cursor: pointer;
 	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 	border: 1px solid transparent;
-	white-space: nowrap;
+	// white-space: nowrap;
+	white-space: normal;
 	line-height: 1;
 }
 
@@ -257,9 +258,6 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 .widget_rwpw-testimonial {
 	.owl-carousel {
 		.owl-item {
-			& > div {
-				// @include vertical-align;
-			}
 			img {
 				width: auto !important;
 				margin: 0 auto;

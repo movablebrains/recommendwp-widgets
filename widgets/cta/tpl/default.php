@@ -3,7 +3,7 @@
 		<?php if ( $display_image == true ) { ?>
 			<div class="cta-image">
 				<?php $this->sub_widget( 'RWP_Image_Widget', $args, $instance['image'] ); ?>
-			</div>>
+			</div>
 		<?php } ?>
 		<div class="cta-text">
 			<?php echo $headline ? '<h4>'.$headline.'</h4>' : ''; ?>
