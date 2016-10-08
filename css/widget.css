@@ -426,6 +426,36 @@ html {
 /* Features Widget
 ----------------------------------------------------------------------------- */
 
+.widget_rwpw-features .features-wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.widget_rwpw-features .features-wrapper .feature {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.widget_rwpw-features .features-wrapper .feature .feature-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.widget_rwpw-features .features-wrapper .feature .feature-content>div {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    -ms-flex-item-align: center;
+    align-self: center;
+    -ms-flex-pack: baseline;
+    justify-content: baseline;
+}
+
 
 /** ## Testimonial Widget
 ----------------------------------------------------------------------------- */

@@ -252,7 +252,25 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 
 /* Features Widget
 ----------------------------------------------------------------------------- */
-
+.widget_rwpw-features {
+	.features-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		.feature {
+			display: flex;
+			.feature-content {
+				display: flex;
+				flex-direction: column;
+				& > div {
+					display: flex;
+					flex: 1 1 100%;
+					align-self: center;
+					justify-content: baseline;
+				}
+			}
+		}
+	}
+}
 /** ## Testimonial Widget
 ----------------------------------------------------------------------------- */
 .widget_rwpw-testimonial {
