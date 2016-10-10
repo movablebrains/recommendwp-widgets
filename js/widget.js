@@ -1,77 +1,6 @@
 (function($){
 	$(document).ready(function(){
-        if ($('.rwpw-testimonial').length > 0) {
-            $('.rwpw-testimonial').each(function (index) {
-                var instance = $(this).data('instance');
-                testimonialInstance(instance);
-            });
-
-            function testimonialInstance(instance) {
-                var obj = window['testimonial' + instance];
-
-                var sid = obj.id,
-                    item = obj.items,
-                    navigation = (obj.navigation == "true"),
-                    pagination = (obj.pagination == "true"),
-                    autoplay = (obj.autoplay == "true"),
-                    smartspeed = obj.duration,
-                    fluidspeed = obj.speed,
-                    autoheight = (obj.autoheight == "true"),
-                    autowidth = (obj.autowidth == "true"),
-                    mergefit = (obj.mergefit == "true"),
-                    center = (obj.center == "true"),
-                    slidesmobile = obj.slidesMobile,
-                    slidestablet = obj.slidesTablet,
-                    loop = (obj.loop == "true"),
-                    margin = obj.margin;
-
-                var owl = $('#' + sid);
-
-                owl.on('initialized.owl.carousel', function (e) {
-                    var curr = $('#' + e.target.id),
-                        maxHeight = 0;
-
-                    curr.find('.owl-item img').each(function () {
-                        if ($(this).height() > maxHeight) {
-                            maxHeight = $(this).height();
-                        }
-                    });
-
-                    curr.find('.owl-item').height(maxHeight);
-                    // curr.find('.owl-item').width(maxWidth);
-                });
-
-                owl.owlCarousel({
-                    items: item,
-                    margin: parseInt(margin),
-                    nav: navigation,
-                    dots: pagination,
-                    autoplay: autoplay,
-                    smartSpeed: smartspeed,
-                    fluidSpeed: fluidspeed,
-                    loop: loop,
-                    autoHeight: autoheight,
-                    center: center,
-                    mergeFit: mergefit,
-                    autoWidth: autowidth,
-                    // navText: ['&#xf104;', '&#xf105;'],
-                    responsive: {
-                        0: {
-                            items: slidesmobile,
-                            nav: navigation
-                        },
-                        768: {
-                            items: slidestablet,
-                            nav: navigation
-                        },
-                        1024: {
-                            items: item,
-                            nav: navigation
-                        }
-                    }
-                });
-            }
-        }
+        
 	});
 
 	// Window load event with minimum delay
@@ -138,6 +67,79 @@
                         mergeFit: mergefit,
                         autoWidth: autowidth,
                         navText: ['&#xf104;', '&#xf105;'],
+                        responsive: {
+                            0: {
+                                items: slidesmobile,
+                                nav: navigation
+                            },
+                            768: {
+                                items: slidestablet,
+                                nav: navigation
+                            },
+                            1024: {
+                                items: item,
+                                nav: navigation
+                            }
+                        }
+                    });
+                }
+            }
+
+            if ($('.rwpw-testimonial').length > 0) {
+                $('.rwpw-testimonial').each(function (index) {
+                    var instance = $(this).data('instance');
+                    testimonialInstance(instance);
+                });
+
+                function testimonialInstance(instance) {
+                    var obj = window['testimonial' + instance];
+
+                    var sid = obj.id,
+                        item = obj.items,
+                        navigation = (obj.navigation == "true"),
+                        pagination = (obj.pagination == "true"),
+                        autoplay = (obj.autoplay == "true"),
+                        smartspeed = obj.duration,
+                        fluidspeed = obj.speed,
+                        autoheight = (obj.autoheight == "true"),
+                        autowidth = (obj.autowidth == "true"),
+                        mergefit = (obj.mergefit == "true"),
+                        center = (obj.center == "true"),
+                        slidesmobile = obj.slidesMobile,
+                        slidestablet = obj.slidesTablet,
+                        loop = (obj.loop == "true"),
+                        margin = obj.margin;
+
+                    var owl = $('#' + sid);
+
+                    owl.on('initialized.owl.carousel', function (e) {
+                        var curr = $('#' + e.target.id),
+                            maxHeight = 0;
+
+                        curr.find('.owl-item img').each(function () {
+                            if ($(this).height() > maxHeight) {
+                                maxHeight = $(this).height();
+                            }
+                        });
+
+                        curr.find('.owl-item').height(maxHeight);
+                        // curr.find('.owl-item').width(maxWidth);
+                    });
+
+                    owl.owlCarousel({
+                        items: item,
+                        margin: parseInt(margin),
+                        nav: navigation,
+                        dots: pagination,
+                        autoplay: autoplay,
+                        smartSpeed: smartspeed,
+                        fluidSpeed: fluidspeed,
+                        loop: loop,
+                        autoHeight: autoheight,
+                        center: center,
+                        mergeFit: mergefit,
+                        autoWidth: autowidth,
+                        // navText: ['&#xf104;', '&#xf105;'],
                         responsive: {
                             0: {
                                 items: slidesmobile,
