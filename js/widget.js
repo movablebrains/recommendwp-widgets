@@ -112,20 +112,6 @@
 
                     var owl = $('#' + sid);
 
-                    owl.on('initialized.owl.carousel', function (e) {
-                        var curr = $('#' + e.target.id),
-                            maxHeight = 0;
-
-                        curr.find('.owl-item img').each(function () {
-                            if ($(this).height() > maxHeight) {
-                                maxHeight = $(this).height();
-                            }
-                        });
-
-                        curr.find('.owl-item').height(maxHeight);
-                        // curr.find('.owl-item').width(maxWidth);
-                    });
-
                     owl.owlCarousel({
                         items: item,
                         margin: parseInt(margin),

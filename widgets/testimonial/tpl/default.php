@@ -51,7 +51,7 @@ $loop = new WP_Query( $post_args ); ?>
     <?php 
     wp_enqueue_script( 'rwpw-owl-carousel-js' );
     wp_enqueue_script( 'rwpw-widgets-js' ); 
-    wp_localize_script('rwpw-widgets-js', 'testimonial' . $widget_id, $vars ); 
+    wp_localize_script('rwpw-widgets-js', 'testimonial' . (int)$widget_id, $vars ); 
     ?>
 
     <div <?php foreach( $attributes as $name => $value ) echo $name . '="' . $value . '" ' ?>>
