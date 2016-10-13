@@ -7,7 +7,7 @@ dev:
     check: true
     path:
         local: /
-        remote: public_html/healthification/wp-content/plugins/recommendwp-widgets/
+        remote: public_html/healthification/wp-content/plugins/recommendwp-widgets
 
 stage:
     scheme: ftp
