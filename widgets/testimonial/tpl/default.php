@@ -48,10 +48,10 @@ $vars = array(
 $loop = new WP_Query( $post_args ); ?>
 
 <?php if ( $loop->have_posts() ) : ?>
-    <?php 
+    <?php
     wp_enqueue_script( 'rwpw-owl-carousel-js' );
-    wp_enqueue_script( 'rwpw-widgets-js' ); 
-    wp_localize_script('rwpw-widgets-js', 'testimonial' . (int)$widget_id, $vars ); 
+    wp_enqueue_script( 'rwpw-widgets-js' );
+    wp_localize_script('rwpw-widgets-js', 'testimonial' . (int)$widget_id, $vars );
     ?>
 
     <div <?php foreach( $attributes as $name => $value ) echo $name . '="' . $value . '" ' ?>>
@@ -68,15 +68,17 @@ $loop = new WP_Query( $post_args ); ?>
                     </div>
                 <?php endif; ?>
                 <div class="testimonial-content">
-                    <?php echo wpautop( get_the_content(), false); ?>
-                    <?php echo '<h4>' . apply_filters( 'rwpw_testimonial_title', get_the_title(), $postid ) . '</h4>'; ?>
+                    <div class="content-wrap">
+                        <?php echo wpautop( get_the_content(), false); ?>
+                        <?php echo '<h4>' . apply_filters( 'rwpw_testimonial_title', get_the_title(), $postid ) . '</h4>'; ?>
+                    </div>
                 </div>
             </div>
         </div>
     <?php endwhile; ?>
-    
+
     <?php else : ?>
         <?php echo __( 'No testimonials found.', 'recommendwp-widgets' ); ?>
-    
+
     </div>
     <?php endif; ?>

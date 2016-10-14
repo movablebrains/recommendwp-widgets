@@ -22,7 +22,7 @@ class RWP_Testimonial_Widget extends SiteOrigin_Widget {
     }
 
     function initialize() {
-    	
+
     }
 
     function get_widget_form() {
@@ -164,18 +164,20 @@ class RWP_Testimonial_Widget extends SiteOrigin_Widget {
 				'type' => 'select',
 				'label' => __( 'Choose template', 'recommendwp-widgets' ),
 				'options' => array(
-					'no-image' => __( 'No featured image', 'recommendwp-widgets' ),
-					'top-image' => __( 'Featured image on top', 'recommendwp-widgets' ),
-					'bottom-image' => __( 'Featured image on bottom', 'recommendwp-widgets' ),
-					'left-image' => __( 'Featured image on left', 'recommendwp-widgets' )
+					'default' => __( 'Default', 'recommendwp-widgets' )
 				),
-				'default' => 'no-image'
+				'default' => 'default'
 			)
 		);
     }
 
     function get_template_name( $instance ) {
-        return 'default';
+        switch ( $instance['template'] ) {
+            case 'default':
+            default:
+                return 'default';
+                break;
+        }
     }
 
     function get_style_name( $instance ) {
