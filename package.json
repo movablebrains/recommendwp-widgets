@@ -4,7 +4,7 @@
   "description": "A collection of widgets for WordPress built using the SiteOrigin Widgets plugin API.",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/webdevsuperfast/recommendwp-shortcodes/"
+    "url": "https://bitbucket.org/webdevsuperfast/recommendwp-widgets/"
   },
   "keywords": [
     "so-widgets-bundle",
