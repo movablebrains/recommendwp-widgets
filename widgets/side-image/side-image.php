@@ -1,6 +1,6 @@
 <?php
 /*
-Widget Name: RecommendWP Side Image
+Widget Name: RWP Side Image
 Description: A simple widget based of Bourbon Refills Side Image.
 Author: RecommendWP
 Author URI: http://www.recommendwp.com
@@ -10,7 +10,7 @@ class RWP_Side_Image extends SiteOrigin_Widget {
 	function __construct() {
 		parent::__construct(
 			'rwpw-side-image',
-			__( 'RecommendWP Side Image', 'recommendwp-widgets' ),
+			__( 'RWP Side Image', 'recommendwp-widgets' ),
 			array(
 				'description' => __( 'A simple widget based of Bourbon Refills Side Image', 'recommendwp-widgets' ),
 				'help' => ''
