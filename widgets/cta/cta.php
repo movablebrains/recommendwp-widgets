@@ -61,11 +61,9 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
             			'type' => 'select',
             			'label' => __( 'Design', 'recommendwp-widgets' ),
             			'options' => array(
-            				'default' => __( 'None', 'recommendwp-widgets' ),
-            				'simple' => __( 'Simple', 'recommendwp-widgets' ),
-            				'center' => __( 'Center', 'recommendwp-widgets' )
+            				'default' => __( 'Default', 'recommendwp-widgets' )
             			),
-            			'default' => 'simple'
+            			'default' => 'default'
             		),
             		'display_image' => array(
             			'type' => 'checkbox',
@@ -93,7 +91,12 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
     }
 
     function get_template_name( $instance ) {
-        return 'default';
+        switch ( $instance['settings']['design'] ) {
+            case 'default':
+            default:
+                return 'default';
+                break;
+        }
     }
 
     function get_style_name( $instance ) {
