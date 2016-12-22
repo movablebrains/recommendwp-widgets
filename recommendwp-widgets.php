@@ -38,9 +38,8 @@ class RecommendWP_Widgets {
             wp_register_style( 'rwpw-css', plugin_dir_url( __FILE__ ) . 'css/widget.css' );
             wp_enqueue_style( 'rwpw-css' );
 
-            // Vendor JS
+            // Owl Carousel JS
             wp_register_script( 'rwpw-owl-carousel-js', plugin_dir_url( __FILE__ ) . 'js/owl.carousel.min.js', array( 'jquery' ), null, true );
-            // wp_enqueue_script( 'recommendwp-widgets-vendor-js' );
 
             // Widget JS
             wp_register_script( 'rwpw-widgets-js', plugin_dir_url( __FILE__ ) . 'js/widget.js', array( 'jquery' ), null, true );
