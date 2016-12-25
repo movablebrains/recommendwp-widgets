@@ -117,12 +117,25 @@ class RWP_Image_Widget extends SiteOrigin_Widget {
 						'default' => true
 					)
 				)
+			),
+			'template' => array(
+				'type' => 'select',
+				'label' => __( 'Image Template', 'recommendwp-widgets' ),
+				'options' => array(
+					'default' => 'Default',
+				),
+				'default' => 'default'
 			)
 		);
 	}
 
 	function get_template_name( $instance ) {
-		return 'default';
+		switch ( $instance['template'] ) {
+            case 'default':
+            default:
+                return 'default';
+                break;
+        }
 	}
 
 	function get_style_name( $instance ) {
