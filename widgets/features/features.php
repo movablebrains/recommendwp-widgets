@@ -70,9 +70,7 @@ class RWP_Features_Widget extends SiteOrigin_Widget {
 				'type' => 'select',
 				'label' => __( 'Design', 'recommendwp-widgets' ),
 				'options' => array(
-					'basic' => __( 'Basic', 'recommendwp-widgets' ),
-					'left-aligned' => __( 'Left aligned', 'recommendwp-widgets' ),
-					'boxed-icon' => __( 'Boxed Icon', 'recommendwp-widgets' )
+					'default' => __( 'Default', 'recommendwp-widgets' ),
 				),
 				'default' => 'basic'
 			),
@@ -88,7 +86,12 @@ class RWP_Features_Widget extends SiteOrigin_Widget {
 	}
 
 	function get_template_name( $instance ) {
-		return 'default';
+		switch ( $instance['design'] ) {
+            case 'default':
+            default:
+                return 'default';
+                break;
+        }
 	}
 
 	function get_style_name( $instance ) {
