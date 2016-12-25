@@ -35,7 +35,12 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
         return array(
             'headline' => array(
                 'type' => 'text',
-                'label' => __( 'Headline', 'recommendwp-widgets' ),
+                'label' => __( 'Heading', 'recommendwp-widgets' ),
+                'default' => __( '', 'recommendwp-widgets' )
+            ),
+            'subheadline' => array(
+                'type' => 'text',
+                'label' => __( 'Subheading', 'recommendwp-widgets' ),
                 'default' => __( '', 'recommendwp-widgets' )
             ),
             'content' => array(
@@ -84,6 +89,7 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
         return array(
             'headline' => !empty( $instance['headline'] ) ? $instance['headline'] : '',
             'subheadline' => !empty( $instance['subheadline'] ) ? $instance['subheadline'] : '',
+            'content' => !empty( $instance['content'] ) ? $instance['content'] : '',
             'design' => $instance['settings']['design'],
             'display_image' => $instance['settings']['display_image'],
             'display_button' => $instance['settings']['display_button']
@@ -106,6 +112,8 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
     function modify_child_widget_form( $child_widget_form, $child_widget ) {
 		unset( $child_widget_form['settings']['fields']['alignment'] );
 		unset( $child_widget_form['title'] );
+        unset( $child_widget_form['content'] );
+        
 		return $child_widget_form;
 	}
 }
