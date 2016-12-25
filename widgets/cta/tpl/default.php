@@ -6,7 +6,8 @@
 			</div>
 		<?php } ?>
 		<div class="cta-text">
-			<?php echo $headline ? '<h4>'.$headline.'</h4>' : ''; ?>
+			<?php echo $headline ? '<h4 class="cta-heading">'.$headline.'</h4>' : ''; ?>
+			<?php echo $subheadline ? '<p class="cta-subheading">'.$subheadline.'</p>' : ''; ?>
 			<?php echo $content ? wpautop( $content, false ) : ''; ?>
 		</div>
 		<?php if ( $display_button == true ) { ?>
