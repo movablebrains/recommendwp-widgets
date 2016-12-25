@@ -19,8 +19,15 @@ $attributes['href'] = esc_url( $url );
 	    		if ( !empty( $icon_size ) ) $icon_styles[] = 'font-size:' .intval( $icon_size ). 'px';
 	    		if ( !empty( $icon_color ) ) $icon_styles[] = 'color:' .$icon_color. '';
 
-	    		echo siteorigin_widget_get_icon( $icon, $icon_styles );
+	    		$icon = siteorigin_widget_get_icon( $icon, $icon_styles );
 			} ?>
+		<?php if ( 'left' === $icon_position  ) {
+			echo $icon;
+		} ?>
     	<?php echo esc_html( $title ); ?>
+
+		<?php if ( 'right' === $icon_position ) {
+			echo $icon;
+		} ?>
 	</span>
 </a>
