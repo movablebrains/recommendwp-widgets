@@ -9,6 +9,7 @@ $classes[] = 'col-' . $column;
 
 $attributes = array(
 	'class' => esc_attr( implode( ' ', $classes ) ),
+	'data-width' => $column
 );
 
 echo '<div class="features-widget">';
