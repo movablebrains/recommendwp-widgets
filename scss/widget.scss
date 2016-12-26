@@ -173,7 +173,7 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 .widget_rwpw-side-image {
 	$large-screen: 1200px;
 	$gutter: 30px;
-	.side-image {
+	.side-image-default {
 		@include media($large-screen) {
 			@include row(table);
 		}
