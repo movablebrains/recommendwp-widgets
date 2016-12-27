@@ -444,7 +444,7 @@ html {
     cursor: pointer;
     background-image: none;
     border: 1px solid transparent;
-    white-space: nowrap;
+    white-space: normal;
     line-height: 1;
     text-decoration: none;
     display: inline-block;
@@ -466,66 +466,22 @@ html {
 }
 
 
-/* CTA Widget
------------------------------------------------------------------------------ */
-
-
 /* Features Widget
 ----------------------------------------------------------------------------- */
 
 .widget_rwpw-features .features-wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .widget_rwpw-features .features-wrapper .feature {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
+    list-style: none;
+    float: left;
 }
 
 .widget_rwpw-features .features-wrapper .feature .feature-content {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-.widget_rwpw-features .features-wrapper .feature .feature-content>div {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -moz-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    align-self: center;
-    -webkit-box-pack: baseline;
-    -webkit-justify-content: baseline;
-    -moz-box-pack: baseline;
-    -ms-flex-pack: baseline;
-    justify-content: baseline;
+    display: block;
 }
 
 
@@ -555,6 +511,12 @@ html {
     .widget_rwpw-side-image .side-image-default .side-image-content {
         display: table-cell;
         width: 66.66667%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .widget_rwpw-button .btn {
+        width: 100% !important;
     }
 }
 

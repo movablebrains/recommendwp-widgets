@@ -221,7 +221,8 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 		cursor: pointer;
 		background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 		border: 1px solid transparent;
-		white-space: nowrap;
+		// white-space: nowrap;
+		white-space: normal;
 		line-height: 1;
 		text-decoration: none;
 		display: inline-block;
@@ -241,31 +242,34 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 		.button-wrap {
 			display: inline-block;
 		}
+		@media only screen and (max-width: 480px) {
+			width: 100% !important;
+		}
 	}
-}
-
-/* CTA Widget
------------------------------------------------------------------------------ */
-.widget_rwpw-cta {
-
 }
 
 /* Features Widget
 ----------------------------------------------------------------------------- */
 .widget_rwpw-features {
 	.features-wrapper {
-		display: flex;
-		flex-wrap: wrap;
+		// display: flex;
+		// flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		padding: 0;
 		.feature {
-			display: flex;
+			list-style: none;
+			float: left;
+			// display: flex;
 			.feature-content {
-				display: flex;
-				flex-direction: column;
+				display: block;
+				// display: flex;
+				// flex-direction: column;
 				& > div {
-					display: flex;
-					flex: 1;
-					align-self: center;
-					justify-content: baseline;
+					// display: flex;
+					// flex: 1;
+					// align-self: center;
+					// justify-content: baseline;
 				}
 			}
 		}
