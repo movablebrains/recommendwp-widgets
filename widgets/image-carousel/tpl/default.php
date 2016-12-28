@@ -11,7 +11,7 @@ $widget_id = preg_replace( '/[^0-9]/', '', $widget_id );
 
 echo '<div class="image-carousel-widget">';
     $images = $instance['images'];
-    $options = $instance['slider_options'];
+    $options = $instance['slideshow'];
     $imageattr = $instance['image_settings'];
 
     $classes = array();
@@ -28,7 +28,7 @@ echo '<div class="image-carousel-widget">';
 
     $attributes = array();
         
-    $attributes['items'] = (int) $options['slides'];
+    $attributes['items'] = (int) $slides;
 
     $attributes['navigation'] = $options['navigation'] == true ? 'true' : 'false';
     $attributes['pagination'] = $options['pagination'] == true ? 'true' : 'false';
@@ -45,9 +45,9 @@ echo '<div class="image-carousel-widget">';
     $attributes['slidestablet'] = $options['slides_tablet'] ? (int) $options['slides_tablet'] : (int) $slides;
     $attributes['loop'] = $options['loop'] == true ? 'true' : 'false';
 
-
-    wp_enqueue_script( 'rwpw-widget-js' );
-    wp_localize_script( 'rwpw-widget-js', 'imagecarousel' . (int)$widget_id, $attributes );
+    wp_enqueue_script( 'rwpw-owl-carousel-js' );
+    wp_enqueue_script( 'rwpw-widgets-js' );
+    wp_localize_script( 'rwpw-widgets-js', 'imagecarousel' . (int)$widget_id, $attributes );
     // var_dump( $images );
 
     if ( is_array( $images ) && !is_wp_error( $images ) ) { ?>
