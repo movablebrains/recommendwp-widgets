@@ -28,6 +28,7 @@ RecommendWP Widgets is a collection of widgets that uses the SiteOrigin Widgets 
 ## Adding your own widget template
 
 ```php
+<?php
 add_filter( 'siteorigin_widgets_form_options_rwpw-cta', 'coach_extend_cta_form', 10, 2 );
 function coach_extend_cta_form( $form_options, $widget ) {
 	if ( !empty( $form_options['settings']['fields']['design']['options'] ) ) {
@@ -39,6 +40,7 @@ function coach_extend_cta_form( $form_options, $widget ) {
 ```
 
 ```php
+<?php
 add_filter( 'siteorigin_widgets_template_file_rwpw-cta', 'coach_extend_cta_template', 10, 3 );
 function coach_extend_cta_template( $filename, $instance, $widget ) {
 	if( !empty($instance['settings']['design']) && $instance['settings']['design'] == 'side-image' ) {
