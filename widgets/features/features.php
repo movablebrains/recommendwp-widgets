@@ -72,7 +72,7 @@ class RWP_Features_Widget extends SiteOrigin_Widget {
 				'options' => array(
 					'default' => __( 'Default', 'recommendwp-widgets' ),
 				),
-				'default' => 'basic'
+				'default' => 'default'
 			),
 			'column' => array(
 				'type' => 'slider',
