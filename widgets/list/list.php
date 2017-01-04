@@ -70,17 +70,7 @@ class List_Widget extends SiteOrigin_Widget {
         				'type' => 'number',
         				'label' => __( 'Icon size', 'recommendwp-widgets' ),
         				'default' => '16'
-        			),
-					'color' => array(
-						'type' => 'color',
-						'label' => __( 'Color', 'recommendwp-widgets' ),
-						'default' => '#fff'
-					),
-					'hover' => array(
-						'type' => 'color',
-						'label' => __( 'Color hover', 'recommendwp-widgets' ),
-						'default' => '#fff'
-					),
+        			)
 				)
 			),
             'template' => array(
@@ -118,8 +108,6 @@ class List_Widget extends SiteOrigin_Widget {
     		'class' => $instance['class'],
     		'icon_image' => $instance['icon']['image'],
             'icon_size' => $instance['icon']['size'],
-            'icon_color' => $instance['icon']['color'],
-            'icon_hover' => $instance['icon']['hover'],
             'template' => $instance['template']
     	);
 	}
