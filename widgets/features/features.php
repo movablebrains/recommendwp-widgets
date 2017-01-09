@@ -40,6 +40,29 @@ class RWP_Features_Widget extends SiteOrigin_Widget {
 					'value_method' => 'val'
 				),
 				'fields' => array(
+					'icon_image' => array(
+						'type' => 'select',
+						'label' => __( 'Icon or Image?', 'recommendwp-widgets' ),
+						'options' => array(
+							'icon' => __( 'Icon', 'recommendwp-widgets' ),
+							'image' => __( 'Image', 'recommendwp-widgets' )
+						),
+						'default' => 'icon'
+					),
+					'icon' => array(
+						'type' => 'icon',
+						'label' => __( 'Icon', 'recommendwp-widgets' )
+					),
+					'icon_size' => array(
+        				'type' => 'number',
+        				'label' => __( 'Icon size', 'recommendwp-widgets' ),
+        				'default' => '16'
+        			),
+					'icon_color' => array(
+						'type' => 'color',
+						'label' => __( 'Color', 'recommendwp-widgets' ),
+						'default' => '#fff'
+					),
 					'image' => array(
 						'type' => 'media',
 						'label' => __('Choose an image', 'recommendwp-widgets'),
@@ -96,6 +119,12 @@ class RWP_Features_Widget extends SiteOrigin_Widget {
 
 	function get_style_name( $instance ) {
 		return 'default';
+	}
+
+	function get_less_variables( $instance ) {
+		return array(
+			'column' => $instance['column']
+		);
 	}
 
 	function get_template_variables( $instance, $args ) {
