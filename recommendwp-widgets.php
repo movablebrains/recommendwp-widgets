@@ -41,6 +41,9 @@ class RecommendWP_Widgets {
             // Owl Carousel JS
             wp_register_script( 'rwpw-owl-carousel-js', plugin_dir_url( __FILE__ ) . 'js/owl.carousel.min.js', array( 'jquery' ), null, true );
 
+            // Magnific Popup JS
+            wp_register_script( 'rwpw-magnific-popup-js', plugin_dir_url( __FILE__ ) . 'js/jquery.magnific-popup.min.js', array( 'jquery' ), null, true );
+
             // Widget JS
             wp_register_script( 'rwpw-widgets-js', plugin_dir_url( __FILE__ ) . 'js/widget.js', array( 'jquery' ), null, true );
         }
