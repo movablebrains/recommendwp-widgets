@@ -143,7 +143,32 @@ class RWP_Button_Widget extends SiteOrigin_Widget {
         				)
         			)
         		)
-        	)
+        	),
+            'popup' => array(
+                'type' => 'section',
+                'label' => __( 'Popup', 'recommendwp-widgets' ),
+                'hide' => true,
+                'fields' => array(
+                    'id' => array(
+                        'type' => 'text',
+                        'label' => __( 'Popup ID', 'recommendwp-widgets' )
+                    ),
+                    'type' => array(
+                        'type' => 'select',
+                        'label' => __( 'Popup Type', 'recommendwp-widgets' ),
+                        'default' => 'default',
+                        'options' => array(
+                            'default' => __( 'None', 'recommendwp-widgets' ),
+                            'inline' => __( 'Inline', 'recommendwp-widgets' ),
+                            'iframe' => __( 'iFrame', 'recommendwp-widgets' )
+                        )
+                    ),
+                    'content' => array(
+                        'type' => 'textarea',
+                        'label' => __( 'Popup Content', 'recommendwp-widgets' )
+                    )
+                ) 
+            ),
         );
     }
 
@@ -167,7 +192,10 @@ class RWP_Button_Widget extends SiteOrigin_Widget {
 			'icon' => $instance['icon']['icon'],
 			'icon_size' => $instance['icon']['size'],
             'icon_color' => $instance['icon']['color'],
-			'icon_position' => $instance['icon']['position']
+			'icon_position' => $instance['icon']['position'],
+            'popup_id' => $instance['popup']['id'],
+            'popup_type' => $instance['popup']['type'],
+            'popup_content' => $instance['popup']['content']
 		);
 
 		return $variables;
