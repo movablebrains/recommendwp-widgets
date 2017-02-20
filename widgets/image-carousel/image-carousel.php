@@ -10,7 +10,7 @@ class Image_Carousel_Widget extends SiteOrigin_Widget {
     function __construct() {
         parent::__construct(
             'rwpw-image-carousel',
-            __( 'Image Carousel', 'recommendwp-widgets' ),
+            __( 'RWP Image Carousel', 'recommendwp-widgets' ),
             array(
                 'description' => __( 'A simple image carousel widget', 'recommendwp-widgets' ),
                 'help' => ''
