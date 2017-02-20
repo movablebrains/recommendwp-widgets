@@ -1,13 +1,21 @@
 // Variables
-$slick-font-path: '../fonts/slick/';
-$slick-loader-path: '../images/';
+$large-screen: 1200px;
+$gutter: 30px;
+$custom-neat-grid: (
+	columns: 12,
+	gutter: 30px,
+	media: 1200px
+);
 
 // Imports
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../bower_components/neat/app/assets/stylesheets/neat';
+@import '../bower_components/neat/contrib/styles';
 
 // Owl Carousel
 @import "../bower_components/owl.carousel/src/scss/owl.carousel.scss";
+
+// Magnific Popup
+@import "../bower_components/magnific-popup/src/css/main.scss";
 
 // Extends
 // Font Weight, Style, Text Transform, Alignment
@@ -171,27 +179,26 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 /* Side Image Widget
 ----------------------------------------------------------------------------- */
 .widget_rwpw-side-image {
-	$large-screen: 1200px;
-	$gutter: 30px;
 	.side-image-default {
-		@include media($large-screen) {
-			@include row(table);
+		@include grid-media($custom-neat-grid) {
+			// @include row(table);
+			display: table;
 		}
 		.images-wrapper {
 			background-size: cover;
 			display: block;
 			padding: $gutter*2;
-			@include media($large-screen) {
-				@include span-columns(4);
+			@include grid-media($custom-neat-grid) {
+				@include grid-column(4);
 				background-size: cover;
 				background-position: bottom;
 			}
 		}
 		.side-image-content {
-			@include span-columns(12);
+			@include grid-column(12);
 			padding: $gutter*2;
-			@include media($large-screen) {
-				@include span-columns(8);
+			@include grid-media($custom-neat-grid) {
+				@include grid-column(8);
 			}
 			.widgettitle {
 				background: #BBB;
@@ -203,13 +210,13 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 				text-transform: uppercase;
 			}
 		}
-		@include reset-display;
+		@include grid-container;
 	}
 }
 
 /* Button Widget
 ----------------------------------------------------------------------------- */
-.widget_rwpw-button {
+.widget_rwpw-button, .so-widget-rwpw-button {
 	.btn {
 		color: #fff;
 		display: inline-block;
@@ -237,10 +244,15 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 		&.icon-left {
 			[class^="sow-icon"] {
 				margin-right: 10px;
+				top:-.1em;
 			}
 		}
 		.button-wrap {
 			display: inline-block;
+			[class^="sow-icon"] {
+				vertical-align: middle;
+				position:relative;
+			}
 		}
 		@media only screen and (max-width: 480px) {
 			width: 100% !important;
