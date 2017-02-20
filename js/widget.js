@@ -11,7 +11,7 @@
 			if (+new Date - fn.now < 500) {
 				setTimeout(fn, 500);
 			}
-			// Do stuffs right here
+			// Image Carousel
             if( $('.rwpw-image-carousel').length > 0 ) {
                 $('.rwpw-image-carousel').each(function(index){
                     var instance = $(this).data('instance');
@@ -85,6 +85,7 @@
                 }
             }
 
+            // Testimonial
             if ($('.rwpw-testimonial').length > 0) {
                 $('.rwpw-testimonial').each(function (index) {
                     var instance = $(this).data('instance');
@@ -140,6 +141,28 @@
                                 nav: navigation
                             }
                         }
+                    });
+                }
+            }
+
+            // Popup
+            if($('.rwpw-button').length > 0) {
+                console.log('Hello World');
+                $('.rwpw-button').each(function(index){
+                    var instance = $(this).data('instance');
+                    buttonInstance(instance);
+                });
+                function buttonInstance(instance) {
+                    var obj = window['btn' + instance];
+                    var sid = obj.id, 
+                        type = obj.type;
+                    var popup = $('#' + sid);
+                    popup.magnificPopup({
+                        type: type,
+                        mainClass: 'mfp-fade',
+                        removalDelay: 160,
+                        preloader: false,
+                        fixedContentPos: false
                     });
                 }
             }
