@@ -14,7 +14,7 @@ RecommendWP Widgets is a collection of widgets that uses the SiteOrigin Widgets 
 1. SiteOrigin Widgets API
 2. Developer-friendly(plugin provides minimal styles)
     - Use your own style
-    - Use your widget template
+    - Use your own widget template
 3. Call-to-Action Widget
 4. Features Widget
 5. Button Widget
