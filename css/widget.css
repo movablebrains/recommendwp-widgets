@@ -1,169 +1,3 @@
-.box,
-.box--alt {
-    background-color: #53aee0;
-    margin-bottom: 10px;
-    min-height: 30px;
-    padding: 0.5rem;
-}
-
-.box--alt {
-    border: 2px solid #ff7c56;
-}
-
-*,
-*::before,
-*::after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-weight: 400;
-}
-
-.grid::after {
-    clear: both;
-    content: "";
-    display: block;
-}
-
-.grid__column {
-    width: -webkit-calc(8.33333% - 21.66667px);
-    width: -moz-calc(8.33333% - 21.66667px);
-    width: calc(8.33333% - 21.66667px);
-    float: left;
-    margin-left: 20px;
-}
-
-.grid__column--thirds {
-    width: -webkit-calc(33.33333% - 26.66667px);
-    width: -moz-calc(33.33333% - 26.66667px);
-    width: calc(33.33333% - 26.66667px);
-    float: left;
-    margin-left: 20px;
-}
-
-.grid--rtl__column--thirds {
-    width: -webkit-calc(33.33333% - 26.66667px);
-    width: -moz-calc(33.33333% - 26.66667px);
-    width: calc(33.33333% - 26.66667px);
-    float: right;
-    margin-right: 20px;
-}
-
-.grid__column--4 {
-    width: -webkit-calc(33.33333% - 26.66667px);
-    width: -moz-calc(33.33333% - 26.66667px);
-    width: calc(33.33333% - 26.66667px);
-    float: left;
-    margin-left: 20px;
-}
-
-.grid__column--8 {
-    width: -webkit-calc(66.66667% - 33.33333px);
-    width: -moz-calc(66.66667% - 33.33333px);
-    width: calc(66.66667% - 33.33333px);
-    float: left;
-    margin-left: 20px;
-}
-
-.grid__column--full {
-    width: -webkit-calc(100% - 40px);
-    width: -moz-calc(100% - 40px);
-    width: calc(100% - 40px);
-    float: left;
-    margin-left: 20px;
-}
-
-.grid__column--3-of-5 {
-    width: -webkit-calc(60% - 32px);
-    width: -moz-calc(60% - 32px);
-    width: calc(60% - 32px);
-    float: left;
-    margin-left: 20px;
-}
-
-.grid__column--2-of-5 {
-    width: -webkit-calc(40% - 28px);
-    width: -moz-calc(40% - 28px);
-    width: calc(40% - 28px);
-    float: left;
-    margin-left: 20px;
-}
-
-.grid-collapse {
-    margin-left: -20px;
-    margin-right: -20px;
-    width: -webkit-calc(100% + 40px);
-    width: -moz-calc(100% + 40px);
-    width: calc(100% + 40px);
-}
-
-.grid--nested::after {
-    clear: both;
-    content: "";
-    display: block;
-}
-
-.grid--nested__column {
-    width: -webkit-calc(33.33333%);
-    width: -moz-calc(33.33333%);
-    width: calc(33.33333%);
-    float: left;
-    margin-left: 0;
-}
-
-.grid-push--3 {
-    margin-left: -webkit-calc(25% - 25px + 40px);
-    margin-left: -moz-calc(25% - 25px + 40px);
-    margin-left: calc(25% - 25px + 40px);
-}
-
-.grid-push--2-of-5 {
-    margin-left: -webkit-calc(40% - 28px + 40px);
-    margin-left: -moz-calc(40% - 28px + 40px);
-    margin-left: calc(40% - 28px + 40px);
-}
-
-.grid-shift--4 {
-    left: -webkit-calc(33.33333% - 26.66667px + 20px);
-    left: -moz-calc(33.33333% - 26.66667px + 20px);
-    left: calc(33.33333% - 26.66667px + 20px);
-    position: relative;
-}
-
-.grid-shift--neg-8 {
-    left: -webkit-calc(-66.66667% - 6.66667px + 20px);
-    left: -moz-calc(-66.66667% - 6.66667px + 20px);
-    left: calc(-66.66667% - 6.66667px + 20px);
-    position: relative;
-}
-
-.grid-column--media-3-to-6 {
-    width: -webkit-calc(25% - 25px);
-    width: -moz-calc(25% - 25px);
-    width: calc(25% - 25px);
-    float: left;
-    margin-left: 20px;
-}
-
-.grid-column--media-3-to-6::before {
-    content: "";
-}
-
-.grid-visual {
-    background-image: -webkit-linear-gradient(left, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.25) 20px, transparent 20px, transparent -webkit-calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(8.33333% - 21.66667px + 20px + 20px), transparent -webkit-calc(8.33333% - 21.66667px + 20px + 20px), transparent -webkit-calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(16.66667% - 23.33333px + 20px + 20px), transparent -webkit-calc(16.66667% - 23.33333px + 20px + 20px), transparent -webkit-calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(25% - 25px + 20px + 20px), transparent -webkit-calc(25% - 25px + 20px + 20px), transparent -webkit-calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(33.33333% - 26.66667px + 20px + 20px), transparent -webkit-calc(33.33333% - 26.66667px + 20px + 20px), transparent -webkit-calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(41.66667% - 28.33333px + 20px + 20px), transparent -webkit-calc(41.66667% - 28.33333px + 20px + 20px), transparent -webkit-calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(50% - 30px + 20px + 20px), transparent -webkit-calc(50% - 30px + 20px + 20px), transparent -webkit-calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(58.33333% - 31.66667px + 20px + 20px), transparent -webkit-calc(58.33333% - 31.66667px + 20px + 20px), transparent -webkit-calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(66.66667% - 33.33333px + 20px + 20px), transparent -webkit-calc(66.66667% - 33.33333px + 20px + 20px), transparent -webkit-calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(75% - 35px + 20px + 20px), transparent -webkit-calc(75% - 35px + 20px + 20px), transparent -webkit-calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(83.33333% - 36.66667px + 20px + 20px), transparent -webkit-calc(83.33333% - 36.66667px + 20px + 20px), transparent -webkit-calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) -webkit-calc(91.66667% - 38.33333px + 20px + 20px), transparent -webkit-calc(91.66667% - 38.33333px + 20px + 20px), transparent -webkit-calc(100% - 20px), rgba(0, 212, 255, 0.25) -webkit-calc(100% - 20px), rgba(0, 212, 255, 0.25) -webkit-calc(100%));
-    background-image: -moz-linear-gradient(left, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.25) 20px, transparent 20px, transparent -moz-calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(8.33333% - 21.66667px + 20px + 20px), transparent -moz-calc(8.33333% - 21.66667px + 20px + 20px), transparent -moz-calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(16.66667% - 23.33333px + 20px + 20px), transparent -moz-calc(16.66667% - 23.33333px + 20px + 20px), transparent -moz-calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(25% - 25px + 20px + 20px), transparent -moz-calc(25% - 25px + 20px + 20px), transparent -moz-calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(33.33333% - 26.66667px + 20px + 20px), transparent -moz-calc(33.33333% - 26.66667px + 20px + 20px), transparent -moz-calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(41.66667% - 28.33333px + 20px + 20px), transparent -moz-calc(41.66667% - 28.33333px + 20px + 20px), transparent -moz-calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(50% - 30px + 20px + 20px), transparent -moz-calc(50% - 30px + 20px + 20px), transparent -moz-calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(58.33333% - 31.66667px + 20px + 20px), transparent -moz-calc(58.33333% - 31.66667px + 20px + 20px), transparent -moz-calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(66.66667% - 33.33333px + 20px + 20px), transparent -moz-calc(66.66667% - 33.33333px + 20px + 20px), transparent -moz-calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(75% - 35px + 20px + 20px), transparent -moz-calc(75% - 35px + 20px + 20px), transparent -moz-calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(83.33333% - 36.66667px + 20px + 20px), transparent -moz-calc(83.33333% - 36.66667px + 20px + 20px), transparent -moz-calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) -moz-calc(91.66667% - 38.33333px + 20px + 20px), transparent -moz-calc(91.66667% - 38.33333px + 20px + 20px), transparent -moz-calc(100% - 20px), rgba(0, 212, 255, 0.25) -moz-calc(100% - 20px), rgba(0, 212, 255, 0.25) -moz-calc(100%));
-    background-image: -o-linear-gradient(left, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.25) 20px, transparent 20px, transparent calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px + 20px), transparent calc(25% - 25px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px + 20px), transparent calc(50% - 30px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px + 20px), transparent calc(75% - 35px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100%));
-    background-image: linear-gradient(to right, rgba(0, 212, 255, 0.25), rgba(0, 212, 255, 0.25) 20px, transparent 20px, transparent calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px), rgba(0, 212, 255, 0.25) calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(8.33333% - 21.66667px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px), rgba(0, 212, 255, 0.25) calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(16.66667% - 23.33333px + 20px + 20px), transparent calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px), rgba(0, 212, 255, 0.25) calc(25% - 25px + 20px + 20px), transparent calc(25% - 25px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px), rgba(0, 212, 255, 0.25) calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(33.33333% - 26.66667px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px), rgba(0, 212, 255, 0.25) calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(41.66667% - 28.33333px + 20px + 20px), transparent calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px), rgba(0, 212, 255, 0.25) calc(50% - 30px + 20px + 20px), transparent calc(50% - 30px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px), rgba(0, 212, 255, 0.25) calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(58.33333% - 31.66667px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px), rgba(0, 212, 255, 0.25) calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(66.66667% - 33.33333px + 20px + 20px), transparent calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px), rgba(0, 212, 255, 0.25) calc(75% - 35px + 20px + 20px), transparent calc(75% - 35px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px), rgba(0, 212, 255, 0.25) calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(83.33333% - 36.66667px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px), rgba(0, 212, 255, 0.25) calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(91.66667% - 38.33333px + 20px + 20px), transparent calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100% - 20px), rgba(0, 212, 255, 0.25) calc(100%));
-}
-
-
 /*
  *  Owl Carousel - Core
  */
@@ -792,134 +626,6 @@ img.mfp-img {
     cursor: pointer;
 }
 
-.text-thin {
-    font-weight: 100;
-}
-
-.text-extralight {
-    font-weight: 200;
-}
-
-.text-light {
-    font-weight: 300;
-}
-
-.text-normal {
-    font-weight: 400;
-}
-
-.text-medium {
-    font-weight: 500;
-}
-
-.text-semibold {
-    font-weight: 600;
-}
-
-.text-bold {
-    font-weight: 700;
-}
-
-.text-extrabold {
-    font-weight: 800;
-}
-
-.text-heavy {
-    font-weight: 900;
-}
-
-.text-italic {
-    font-style: italic;
-}
-
-.text-oblique {
-    font-style: oblique;
-}
-
-.text-normal {
-    font-style: normal;
-}
-
-.text-inherit {
-    font-style: inherit;
-}
-
-.text-initial {
-    font-style: initial;
-}
-
-.text-unset {
-    font-style: unset;
-}
-
-.text-capitalize {
-    text-transform: capitalize;
-}
-
-.text-uppercase {
-    text-transform: uppercase;
-}
-
-.text-lowercase {
-    text-transform: lowercase;
-}
-
-.text-none {
-    text-transform: none;
-}
-
-.text-full-width {
-    text-transform: full-width;
-}
-
-.text-none {
-    text-align: none;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.display-inline {
-    display: inline;
-}
-
-.display-inline-block {
-    display: inline-block;
-}
-
-.display-table {
-    display: table;
-}
-
-.display-table-cell {
-    display: table-cell;
-}
-
-.display-flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.display-none {
-    display: none;
-}
-
-.display-unset {
-    display: unset;
-}
-
 
 /* Image Carousel
 ----------------------------------------------------------------------------- */
@@ -1052,50 +758,27 @@ img.mfp-img {
     margin: 0 auto;
 }
 
-@media only screen and (min-width: 1000px) {
-    .grid-column--media-3-to-6 {
-        width: -webkit-calc(50% - 75px);
-        width: -moz-calc(50% - 75px);
-        width: calc(50% - 75px);
-        float: left;
-        margin-left: 50px;
-    }
-    .grid-column--media-3-to-6::before {
-        content: "1000px";
-    }
+@media only screen and (min-width: 1200px) {
     .widget_rwpw-side-image .side-image-default {
         display: table;
     }
     .widget_rwpw-side-image .side-image-default .images-wrapper {
-        width: -webkit-calc(33.33333% - 66.66667px);
-        width: -moz-calc(33.33333% - 66.66667px);
-        width: calc(33.33333% - 66.66667px);
+        width: -webkit-calc(33.33333% - 40px);
+        width: -moz-calc(33.33333% - 40px);
+        width: calc(33.33333% - 40px);
         float: left;
-        margin-left: 50px;
+        margin-left: 30px;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         background-position: bottom;
     }
     .widget_rwpw-side-image .side-image-default .side-image-content {
-        width: -webkit-calc(66.66667% - 83.33333px);
-        width: -moz-calc(66.66667% - 83.33333px);
-        width: calc(66.66667% - 83.33333px);
+        width: -webkit-calc(66.66667% - 50px);
+        width: -moz-calc(66.66667% - 50px);
+        width: calc(66.66667% - 50px);
         float: left;
-        margin-left: 50px;
-    }
-}
-
-@media only screen and (min-width: 1000px) and (max-width: 1100px) {
-    .grid-column--media-3-to-6 {
-        width: -webkit-calc(50% - 120px);
-        width: -moz-calc(50% - 120px);
-        width: calc(50% - 120px);
-        float: left;
-        margin-left: 80px;
-    }
-    .grid-column--media-3-to-6::before {
-        content: "only screen and (min-width: 1000px) and (max-width: 1100px)";
+        margin-left: 30px;
     }
 }
 
@@ -1182,19 +865,6 @@ screen and (max-height: 300px) {
     .widget_rwpw-button .btn,
     .so-widget-rwpw-button .btn {
         width: 100% !important;
-    }
-}
-
-@media print {
-    .grid-column--media-3-to-6 {
-        width: -webkit-calc(60% - 32px);
-        width: -moz-calc(60% - 32px);
-        width: calc(60% - 32px);
-        float: left;
-        margin-left: 20px;
-    }
-    .grid-column--media-3-to-6::before {
-        content: "print";
     }
 }
 
