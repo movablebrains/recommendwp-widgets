@@ -9,56 +9,13 @@ $custom-neat-grid: (
 
 // Imports
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../bower_components/neat/contrib/styles';
+@import '../bower_components/neat/core/neat';
 
 // Owl Carousel
 @import "../bower_components/owl.carousel/src/scss/owl.carousel.scss";
 
 // Magnific Popup
 @import "../bower_components/magnific-popup/src/css/main.scss";
-
-// Extends
-// Font Weight, Style, Text Transform, Alignment
-$weights: (thin, 100), (extralight, 200), (light, 300), (normal, 400), (medium, 500), (semibold, 600), (bold, 700), (extrabold,800), (heavy, 900);
-$styles: italic, oblique, normal, inherit, initial, unset;
-$transforms: capitalize, uppercase, lowercase, none, full-width;
-$alignments: none, left, right, center;
-$displays: inline, inline-block, table, table-cell, flex, none, unset;
-
-// Font Weight
-@each $weight, $value in $weights {
-	.text-#{$weight} {
-		font-weight: $value;
-	}
-}
-
-// Font Style
-@each $style in $styles {
-	.text-#{$style} {
-		font-style: $style;
-	}
-}
-
-// Text Transform
-@each $transform in $transforms {
-	.text-#{$transform} {
-		text-transform: $transform;
-	}
-}
-
-// Text Alignment
-@each $alignment in $alignments {
-	.text-#{$alignment} {
-		text-align: $alignment;
-	}
-}
-
-// Display
-@each $display in $displays {
-	.display-#{$display} {
-		display: $display;
-	}
-}
 
 //* Icons & Type Alignment Fix
 // @link http://snook.ca/archives/html_and_css/icons-and-type
@@ -71,11 +28,8 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 
 @mixin button {
 	text-transform: uppercase;
-	// color: $button-color;
 	display: inline-block;
-	margin-bottom: 0; // For input.btn
-	// font-family: $button-font;
-	// font-weight: $button-font-weight;
+	margin-bottom: 0;
 	text-align: center;
 	vertical-align: middle;
 	touch-action: manipulation;
@@ -181,7 +135,6 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 .widget_rwpw-side-image {
 	.side-image-default {
 		@include grid-media($custom-neat-grid) {
-			// @include row(table);
 			display: table;
 		}
 		.images-wrapper {
@@ -264,25 +217,14 @@ $displays: inline, inline-block, table, table-cell, flex, none, unset;
 ----------------------------------------------------------------------------- */
 .widget_rwpw-features {
 	.features-wrapper {
-		// display: flex;
-		// flex-wrap: wrap;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		.feature {
 			list-style: none;
 			float: left;
-			// display: flex;
 			.feature-content {
 				display: block;
-				// display: flex;
-				// flex-direction: column;
-				& > div {
-					// display: flex;
-					// flex: 1;
-					// align-self: center;
-					// justify-content: baseline;
-				}
 			}
 		}
 	}
