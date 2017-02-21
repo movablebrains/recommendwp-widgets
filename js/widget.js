@@ -146,9 +146,8 @@
             }
 
             // Popup
-            if($('.rwpw-button').length > 0) {
-                console.log('Hello World');
-                $('.rwpw-button').each(function(index){
+            if($('.rwpw-button-popup').length > 0) {
+                $('.rwpw-button-popup').each(function(index){
                     var instance = $(this).data('instance');
                     buttonInstance(instance);
                 });
@@ -162,7 +161,8 @@
                         mainClass: 'mfp-fade',
                         removalDelay: 160,
                         preloader: false,
-                        fixedContentPos: false
+                        fixedContentPos: false,
+                        closeMarkup: '<a title="%title%" class="mfp-close">&#215;</a>'
                     });
                 }
             }

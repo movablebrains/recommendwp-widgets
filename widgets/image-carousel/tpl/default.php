@@ -48,7 +48,6 @@ echo '<div class="image-carousel-widget">';
     wp_enqueue_script( 'rwpw-owl-carousel-js' );
     wp_enqueue_script( 'rwpw-widgets-js' );
     wp_localize_script( 'rwpw-widgets-js', 'imagecarousel' . (int)$widget_id, $attributes );
-    // var_dump( $images );
 
     if ( is_array( $images ) && !is_wp_error( $images ) ) { ?>
         <div <?php foreach( $attr as $name => $value ) echo $name . '="' . $value . '" ' ?>>
