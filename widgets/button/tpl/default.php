@@ -1,7 +1,9 @@
 <?php
 $classes = array();
 $classes[] = 'btn';
-$classes[] = 'rwpw-button';
+if ( $popup_type != 'default' ) {
+	$classes[] = 'rwpw-button-popup';
+}
 $classes[] = 'btn-' . $design;
 $classes[] = 'icon-' . $icon_position;
 
@@ -26,9 +28,12 @@ if ( $popup_type != 'default' ) {
 	$attr = array();
 	$attr['type'] = $popup_type;
 	$attr['id'] = 'btn-' . (int)$widget_id;
-	$attr['class'] = 'mfp-hide';
-	
+
 	wp_localize_script( 'rwpw-widgets-js', 'btn' . (int)$widget_id, $attr );
+
+	$attrib = array();
+	$attrib['class'] = 'mfp-hide ' . $popup_id . '-content';
+	$attrib['id'] = $popup_id;
 }
 ?>
 
@@ -53,7 +58,7 @@ if ( $popup_type != 'default' ) {
 </a>
 
 <?php if ( $popup_type == 'inline' ) { ?>
-	<div <?php foreach( $attr as $key => $value ) echo $key . '="' . $value . '"'; ?>>
+	<div <?php foreach( $attrib as $key => $value ) echo $key . '="' . $value . '"'; ?>>
 		<?php echo do_shortcode( $popup_content, false ); ?>
 	</div>
 <?php } ?>
