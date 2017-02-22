@@ -7,6 +7,11 @@ $custom-neat-grid: (
 	media: 1200px
 );
 
+$side-image-grid: (
+	columns: 12,
+	gutter: 0px
+);
+
 // Imports
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../bower_components/neat/core/neat';
@@ -16,6 +21,9 @@ $custom-neat-grid: (
 
 // Magnific Popup
 @import "../bower_components/magnific-popup/src/css/main.scss";
+
+// Flex Mixin
+@import "../bower_components/sass-flex-mixin/flex";
 
 //* Icons & Type Alignment Fix
 // @link http://snook.ca/archives/html_and_css/icons-and-type
@@ -134,36 +142,12 @@ $custom-neat-grid: (
 ----------------------------------------------------------------------------- */
 .widget_rwpw-side-image {
 	.side-image-default {
-		@include grid-media($custom-neat-grid) {
-			display: table;
-		}
 		.images-wrapper {
 			background-size: cover;
+			background-position: left top;
+			background-repeat: no-repeat;
 			display: block;
-			padding: $gutter*2;
-			@include grid-media($custom-neat-grid) {
-				@include grid-column(4);
-				background-size: cover;
-				background-position: bottom;
-			}
 		}
-		.side-image-content {
-			@include grid-column(12);
-			padding: $gutter*2;
-			@include grid-media($custom-neat-grid) {
-				@include grid-column(8);
-			}
-			.widgettitle {
-				background: #BBB;
-				color: white;
-				display: inline-block;
-				font-size: 0.75em;
-				margin-bottom: 1.3em;
-				padding: 3px 8px;
-				text-transform: uppercase;
-			}
-		}
-		@include grid-container;
 	}
 }
 
