@@ -13,17 +13,17 @@ $side-image-grid: (
 );
 
 // Imports
-@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../bower_components/neat/core/neat';
+@import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../../bower_components/neat/core/neat';
 
 // Owl Carousel
-@import "../bower_components/owl.carousel/src/scss/owl.carousel.scss";
+@import "../../bower_components/owl.carousel/src/scss/owl.carousel.scss";
 
 // Magnific Popup
-@import "../bower_components/magnific-popup/src/css/main.scss";
+@import "../../bower_components/magnific-popup/src/css/main.scss";
 
 // Flex Mixin
-@import "../bower_components/sass-flex-mixin/flex";
+@import "../../bower_components/sass-flex-mixin/flex";
 
 //* Icons & Type Alignment Fix
 // @link http://snook.ca/archives/html_and_css/icons-and-type
@@ -134,6 +134,14 @@ $side-image-grid: (
 			display: block;
 		}
 	}
+}
+
+div[data-padding="left-padding"] {
+	padding-left: 0px !important;
+}
+
+div[data-padding="right-padding"] {
+	padding-right: 0px !important;
 }
 
 /* Button Widget

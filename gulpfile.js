@@ -18,14 +18,14 @@ var gulp = require('gulp'),
 
 // CSS
 gulp.task('source:css', function(){
-    return gulp.src('scss/*.scss')
+    return gulp.src('assets/scss/*.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(autoprefixer('> 0%'))
         .pipe(cmq())
         .pipe(prettify())
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('widget.css'))
-        .pipe(gulp.dest('css'))
+        .pipe(gulp.dest('assets/css'))
         .pipe(notify({ message: 'Source styles task complete' }));
 } );
 
@@ -42,7 +42,7 @@ gulp.task('vendor:js', function(){
             .pipe(rename({suffix: '.min'}))
             .pipe(gulp.dest('temp/js'))
     }))
-    .pipe(gulp.dest('js'))
+    .pipe(gulp.dest('assets/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
@@ -61,6 +61,6 @@ gulp.task('default', ['clean:temp'], function() {
 // Watch
 gulp.task('watch', function() {
     // Watch .scss files
-    gulp.watch(['scss/*.scss', 'sass/**/*.scss'], ['source:css']);
-    gulp.watch(['js/vendor/*.js'], ['vendor:js']);
+    gulp.watch(['assets/scss/*.scss', 'assets/sass/**/*.scss'], ['source:css']);
+    gulp.watch(['assets/js/vendor/*.js'], ['vendor:js']);
 });

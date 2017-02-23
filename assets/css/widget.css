@@ -658,6 +658,14 @@ img.mfp-img {
     display: block;
 }
 
+div[data-padding="left-padding"] {
+    padding-left: 0px !important;
+}
+
+div[data-padding="right-padding"] {
+    padding-right: 0px !important;
+}
+
 
 /* Button Widget
 ----------------------------------------------------------------------------- */
