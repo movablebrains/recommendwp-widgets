@@ -40,6 +40,33 @@ class RWP_Side_Image extends SiteOrigin_Widget {
 				'class' => 'SiteOrigin_Widget_Editor_Widget',
 				'hide' => false
 			),
+			'button' => array(
+            	'type' => 'widget',
+            	'label' => __( 'Button', 'recommendwp-widgets' ),
+            	'class' => 'RWP_Button_Widget',
+            	'hide' => false
+            ),
+            'settings' => array(
+            	'type' => 'section',
+            	'label' => __( 'Settings', 'recommendwp-widgets' ),
+            	'fields' => array(
+            		'display_image' => array(
+            			'type' => 'checkbox',
+            			'label' => __( 'Display Image', 'recommendwp-widgets' ),
+            			'default' => true
+            		),
+            		'display_content' => array(
+            			'type' => 'checkbox',
+            			'label' => __( 'Display Content', 'recommendwp-widgets' ),
+            			'default' => true
+            		),
+            		'display_button' => array(
+            			'type' => 'checkbox',
+            			'label' => __( 'Display Button', 'recommendwp-widgets' ),
+            			'default' => true
+            		)
+            	)
+            ),
 			'template' => array(
 				'type' => 'select',
 				'label' => __( 'Template', 'recommendwp-widgets' ),
@@ -64,7 +91,10 @@ class RWP_Side_Image extends SiteOrigin_Widget {
 		return array(
 			'image' => $instance['image'],
 			'size' => 'full',
-			'template' => $instance['template']
+			'template' => $instance['template'],
+			'display_image' => $instance['settings']['display_image'],
+			'display_content' => $instance['settings']['display_content'],
+            'display_button' => $instance['settings']['display_button']
 		);
 	}
 }
