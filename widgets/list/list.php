@@ -37,7 +37,7 @@ class List_Widget extends SiteOrigin_Widget {
 				'label' => __('Add List', 'recommendwp-widgets'),
 				'item_name' => __('List', 'recommendwp-widgets'),
 				'item_label' => array(
-					'selector' => "[id*='repeat_text']",
+					'selector' => "[id*='title']",
 					'update_event' => 'change',
 					'value_method' => 'val'
 				),
@@ -48,9 +48,18 @@ class List_Widget extends SiteOrigin_Widget {
 						'default' => ''
 					),
 					'content' => array(
-						'type' => 'textarea',
+						'type' => 'tinymce',
 						'label' => __('List Content', 'recommendwp-widgets'),
-						'default' => ''
+						'default' => '',
+						'rows' => 10,
+						'default_editor' => 'html',
+						'button_filters' => array(
+							'mce_buttons' => array( $this, 'filter_mce_buttons' ),
+							'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
+							'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
+							'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
+							'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
+						),
 					)
 				)
 			),
