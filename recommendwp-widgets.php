@@ -17,9 +17,6 @@ class RecommendWP_Widgets {
 
 		add_filter( 'siteorigin_panels_widget_args', array( $this, 'rwpw_widget_args' ) );
 
-		add_filter( 'siteorigin_panels_row_style_fields', array( $this, 'rwpw_custom_row_style_fields' ) );
-		add_filter( 'siteorigin_panels_row_style_attributes', array( $this, 'rwpw_custom_row_style_attributes' ), 10, 2 );
-
 		foreach ( glob( plugin_dir_path( __FILE__ ) . "widgets/*.php" ) as $file ) {
 			include_once $file;
 		}
@@ -49,6 +46,8 @@ class RecommendWP_Widgets {
 
 			// Widget JS
 			wp_register_script( 'rwpw-widgets-js', plugin_dir_url( __FILE__ ) . 'assets/js/widget.js', array( 'jquery' ), null, true );
+			
+			wp_enqueue_script( 'rwpw-widgets-js' );
 		}
 	}
 
@@ -62,31 +61,6 @@ class RecommendWP_Widgets {
 		$args['widget_id'] = $args['widget_id'] . '1';
 
 		return $args;
-	}
-
-	public function rwpw_custom_row_style_fields( $fields ) {
-		$fields['remove_padding'] = array(
-			'name' => __( 'Remove Padding', 'recommendwp-widgets' ),
-			'type' => 'select',
-			'group' => 'design',
-			'description' => 'Removes left/right padding in a full width layout',
-			'priority' => 8,
-			'options' => array(
-				'none' => __( 'None', 'recommendwp-widgets' ),
-				'left-padding' => __( 'Left Padding', 'recommendwp-widgets' ),
-				'right-padding' => __( 'Right Padding', 'recommendwp-widgets' )
-			)
-		);
-
-		return $fields;
-	}
-
-	public function rwpw_custom_row_style_attributes( $attributes, $args ) {
-		if ( !empty( $args['remove_padding'] ) ) {
-			$attributes['data-padding'] = $args['remove_padding'];
-		}
-
-		return $attributes;
 	}
 }
 
