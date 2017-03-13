@@ -2,7 +2,7 @@
 /*
 Plugin Name: RecommendWP Widgets
 Description: A collection of widgets for WordPress built using the SiteOrigin Widgets API.
-Version: 1.0.8
+Version: 1.0.9
 Author: RecommendWP
 Author URI: http://www.recommendwp.com
 License: GPL3
