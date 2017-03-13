@@ -37,7 +37,7 @@ class Image_Carousel_Widget extends SiteOrigin_Widget {
 				'label' => __('Add Images', 'recommendwp-widgets'),
 				'item_name' => __('Image', 'recommendwp-widgets'),
 				'item_label' => array(
-					'selector' => "[id*='repeat_text']",
+					'selector' => "[id*='image']",
 					'update_event' => 'change',
 					'value_method' => 'val'
 				),
