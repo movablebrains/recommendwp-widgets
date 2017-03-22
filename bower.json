@@ -21,8 +21,8 @@
     "tests"
   ],
   "dependencies": {
-    "owl.carousel": "^2.2.0",
-    "bourbon": "^4.3.2",
+    "owl.carousel": "^2.2.1",
+    "bourbon": "^4.3.3",
     "neat": "^2.0.0",
     "magnific-popup": "^1.1.0",
     "sass-flex-mixin": "^1.0.3"
