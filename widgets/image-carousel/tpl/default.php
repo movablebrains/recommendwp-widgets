@@ -41,8 +41,8 @@ echo '<div class="image-carousel-widget">';
     $attributes['center'] = $options['center'] == true ? 'true' : 'false';
     $attributes['margin'] = $options['margin'];
     $attributes['id'] = 'image-carousel-' . (int) $widget_id;
-    $attributes['slidesmobile'] = $options['slides_mobile'] ? (int) $options['slides_mobile'] : (int) $slides;
-    $attributes['slidestablet'] = $options['slides_tablet'] ? (int) $options['slides_tablet'] : (int) $slides;
+    $attributes['slidesmobile'] =  $slides_mobile ? (int) $slides_mobile : (int) $slides;
+    $attributes['slidestablet'] = $slides_tablet ? (int) $slides_tablet : (int) $slides;
     $attributes['loop'] = $options['loop'] == true ? 'true' : 'false';
 
     wp_enqueue_script( 'rwpw-owl-carousel-js' );
