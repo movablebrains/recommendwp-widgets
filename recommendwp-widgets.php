@@ -30,6 +30,9 @@ class RecommendWP_Widgets {
 		if ( function_exists( 'mr_image_resize' ) )
 			require_once( plugin_dir_path( __FILE__ ) . 'lib/misc.php' );
 
+		// Plugin Updater
+		require_once( plugin_dir_path( __FILE__ ) . 'lib/update.php' );
+
 	}
 
 	public function rwpw_enqueue_scripts() {
