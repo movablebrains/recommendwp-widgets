@@ -14,6 +14,9 @@
 .owl-carousel .owl-stage {
     position: relative;
     -ms-touch-action: pan-Y;
+    -moz-backface-visibility: hidden;
+    /* fix firefox animation glitch */
+    ;
 }
 
 .owl-carousel .owl-stage:after {
@@ -32,6 +35,16 @@
     -webkit-transform: translate3d(0px, 0px, 0px);
 }
 
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+}
+
 .owl-carousel .owl-item {
     position: relative;
     min-height: 1px;
@@ -44,7 +57,6 @@
 .owl-carousel .owl-item img {
     display: block;
     width: 100%;
-    -webkit-transform-style: preserve-3d;
 }
 
 .owl-carousel .owl-nav.disabled,
@@ -645,6 +657,55 @@ img.mfp-img {
     margin: 0 auto;
 }
 
+.widget_rwpw-image-carousel .owl-carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    margin-top: -18px;
+    line-height: 1;
+    min-height: 36px;
+}
+
+.widget_rwpw-image-carousel .owl-carousel .owl-nav .material-icons {
+    font-size: 36px;
+}
+
+.widget_rwpw-image-carousel .owl-carousel .owl-nav>div {
+    position: absolute;
+    left: -36px;
+}
+
+.widget_rwpw-image-carousel .owl-carousel .owl-nav>div.owl-next {
+    left: auto;
+    right: -36px;
+}
+
+.widget_rwpw-image-carousel .owl-carousel .owl-dots {
+    display: block;
+}
+
+.widget_rwpw-image-carousel .owl-carousel .owl-dots .owl-dot {
+    text-align: center;
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.widget_rwpw-image-carousel .owl-carousel .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border: 1px solid #333;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+}
+
+.widget_rwpw-image-carousel .owl-carousel .owl-dots .owl-dot.active span {
+    background: #333;
+}
+
 
 /* Side Image Widget
 ----------------------------------------------------------------------------- */
@@ -740,6 +801,55 @@ div[data-padding="right-padding"] {
 .widget_rwpw-testimonial .owl-carousel .owl-item img {
     width: auto !important;
     margin: 0 auto;
+}
+
+.widget_rwpw-testimonial .owl-carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    margin-top: -18px;
+    line-height: 1;
+    min-height: 36px;
+}
+
+.widget_rwpw-testimonial .owl-carousel .owl-nav .material-icons {
+    font-size: 36px;
+}
+
+.widget_rwpw-testimonial .owl-carousel .owl-nav>div {
+    position: absolute;
+    left: -36px;
+}
+
+.widget_rwpw-testimonial .owl-carousel .owl-nav>div.owl-next {
+    left: auto;
+    right: -36px;
+}
+
+.widget_rwpw-testimonial .owl-carousel .owl-dots {
+    display: block;
+}
+
+.widget_rwpw-testimonial .owl-carousel .owl-dots .owl-dot {
+    text-align: center;
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.widget_rwpw-testimonial .owl-carousel .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border: 1px solid #333;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+}
+
+.widget_rwpw-testimonial .owl-carousel .owl-dots .owl-dot.active span {
+    background: #333;
 }
 
 @media all and (max-width: 900px) {
