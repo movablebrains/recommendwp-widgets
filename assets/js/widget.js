@@ -66,7 +66,7 @@
                         center: center,
                         mergeFit: mergefit,
                         autoWidth: autowidth,
-                        navText: ['&#xf104;', '&#xf105;'],
+                        navText: ['<i class="material-icons">keyboard_arrow_left</i>', '<i class="material-icons">keyboard_arrow_right</i>'],
                         responsive: {
                             0: {
                                 items: slidesmobile,
@@ -127,6 +127,7 @@
                         mergeFit: mergefit,
                         autoWidth: autowidth,
                         // navText: ['&#xf104;', '&#xf105;'],
+                        navText: ['<i class="material-icons">keyboard_arrow_left</i>', '<i class="material-icons">keyboard_arrow_right</i>'],
                         responsive: {
                             0: {
                                 items: slidesmobile,
