@@ -12,6 +12,8 @@ $side-image-grid: (
 	gutter: 0px
 );
 
+$image-path: '../../images';
+
 // Imports
 @import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../../bower_components/neat/core/neat';
@@ -256,6 +258,63 @@ div[data-padding="right-padding"] {
 				width: auto !important;
 				margin: 0 auto;
 			}
+		}
+		.owl-nav {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 50%;
+			margin-top: -18px;
+			line-height: 1;
+			min-height: 36px;
+			.material-icons {
+				font-size: 36px;
+			}
+			& > div {
+				position: absolute;
+				left: -36px;
+				&.owl-next {
+					left: auto;
+					right: -36px;
+				}
+			}
+		}
+		.owl-dots {
+			display: block;
+			.owl-dot {
+				text-align: center;
+				display: inline-block;
+				margin: 0 4px;
+				span {
+					width: 10px;
+					height: 10px;
+					background: transparent;
+					border: 1px solid #333;
+					border-radius: 50%;
+					display: block;
+				}
+				&.active {
+					span {
+						background: #333;
+					}
+				}
+			}
+		}
+	}
+}
+
+/** ## Video Widget
+----------------------------------------------------------------------------- */
+.widget_rwpw-video-carousel {
+	.owl-carousel {
+		.owl-item {
+			img {
+				width: auto !important;
+				margin: 0 auto;
+			}
+		}
+		.owl-video-play-icon {
+			background-image: url(#{$image-path}/owl.video.play.png);
 		}
 		.owl-nav {
 			position: absolute;

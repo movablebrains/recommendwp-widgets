@@ -852,6 +852,68 @@ div[data-padding="right-padding"] {
     background: #333;
 }
 
+
+/** ## Video Widget
+----------------------------------------------------------------------------- */
+
+.widget_rwpw-video-carousel .owl-carousel .owl-item img {
+    width: auto !important;
+    margin: 0 auto;
+}
+
+.widget_rwpw-video-carousel .owl-carousel .owl-video-play-icon {
+    background-image: url(../../images/owl.video.play.png);
+}
+
+.widget_rwpw-video-carousel .owl-carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    margin-top: -18px;
+    line-height: 1;
+    min-height: 36px;
+}
+
+.widget_rwpw-video-carousel .owl-carousel .owl-nav .material-icons {
+    font-size: 36px;
+}
+
+.widget_rwpw-video-carousel .owl-carousel .owl-nav>div {
+    position: absolute;
+    left: -36px;
+}
+
+.widget_rwpw-video-carousel .owl-carousel .owl-nav>div.owl-next {
+    left: auto;
+    right: -36px;
+}
+
+.widget_rwpw-video-carousel .owl-carousel .owl-dots {
+    display: block;
+}
+
+.widget_rwpw-video-carousel .owl-carousel .owl-dots .owl-dot {
+    text-align: center;
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.widget_rwpw-video-carousel .owl-carousel .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    border: 1px solid #333;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+}
+
+.widget_rwpw-video-carousel .owl-carousel .owl-dots .owl-dot.active span {
+    background: #333;
+}
+
 @media all and (max-width: 900px) {
     .mfp-arrow {
         -webkit-transform: scale(0.75);
