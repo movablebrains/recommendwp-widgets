@@ -39,6 +39,9 @@ class RecommendWP_Widgets {
 			wp_register_style( 'rwpw-css', plugin_dir_url( __FILE__ ) . 'assets/css/widget.css' );
 			wp_enqueue_style( 'rwpw-css' );
 
+			// Material Icon
+			wp_enqueue_style( 'rwpw-material-icon', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), null ); 
+
 			// Owl Carousel JS
 			wp_register_script( 'rwpw-owl-carousel-js', plugin_dir_url( __FILE__ ) . 'assets/js/owl.carousel.min.js', array( 'jquery' ), null, true );
 
