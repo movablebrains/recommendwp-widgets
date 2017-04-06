@@ -56,17 +56,18 @@ $loop = new WP_Query( $post_args ); ?>
 
     <div <?php foreach( $attributes as $name => $value ) echo $name . '="' . $value . '" ' ?>>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-        <?php $thumb_id = get_post_thumbnail_id();
-            $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full', true);
-            $thumb_url = $thumb_url_array[0];
-            $image = rwpw_thumb( $thumb_url, $width, $height ); ?>
+        <?php 
+        $thumbnail = rwpw_post_image();
+        $thumb = rwpw_thumb( $thumbnail, $width, $height ); 
+        ?>
+                
         <div class="testimonial-wrapper">
             <div class="testimonial-copy">
-                <?php if ( $image ) : ?>
+                <?php if ( !empty( $thumbnail ) ) { ?>
                     <div class="testimonial-image">
-                        <img src="<?php echo $image; ?>" alt="" />
+                        <?php echo '<img class="alignleft testimonial-image" src="'. $thumb .'" alt="'.get_the_title().'" />'; ?>
                     </div>
-                <?php endif; ?>
+                <?php } ?>
                 <div class="testimonial-content">
                     <div class="content-wrap">
                         <?php echo wpautop( get_the_content(), false); ?>
