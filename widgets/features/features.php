@@ -117,10 +117,6 @@ class RWP_Features_Widget extends SiteOrigin_Widget {
         }
 	}
 
-	function get_style_name( $instance ) {
-		return 'default';
-	}
-
 	function get_less_variables( $instance ) {
 		return array(
 			'column' => $instance['column']
