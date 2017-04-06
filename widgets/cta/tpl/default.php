@@ -8,7 +8,7 @@
 		<div class="cta-text">
 			<?php echo $headline ? '<h4 class="cta-heading">'.$headline.'</h4>' : ''; ?>
 			<?php echo $subheadline ? '<p class="cta-subheading">'.$subheadline.'</p>' : ''; ?>
-			<?php echo $content ? wpautop( $content, false ) : ''; ?>
+			<?php echo $content ? wpautop( do_shortcode( $content ), false ) : ''; ?>
 		</div>
 		<?php if ( $display_button == true ) { ?>
 			<div class="cta-button">

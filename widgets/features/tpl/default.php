@@ -45,7 +45,7 @@ echo '<div class="features-widget">';
 						<?php echo $headline ? '<h4>'.$headline.'</h4>' : ''; ?>
 					</div>
 					<div class="feature-copy">
-						<?php echo $subheadline ? wpautop( $subheadline, false ) : ''; ?>
+						<?php echo $subheadline ? wpautop( do_shortcode( $subheadline ), false ) : ''; ?>
 						<?php echo $button_link ? '<a class="button" href="'.$button_link.'">'.$button_text.'</a>' : ''; ?>
 					</div>
 				</div>

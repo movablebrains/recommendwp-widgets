@@ -38,7 +38,7 @@ echo '<div class="list-widget">';
                             $title = $list['title'];
                             $content = $list['content'];
                             echo $title ? '<h4 class="list-title">'.$title.'</h4>' : '';
-                            echo $content ? wpautop( $content, true ) : '';
+                            echo $content ? wpautop( do_shortcode( $content ), true ) : '';
                             ?>
                         </div>
                     </div>
