@@ -35,7 +35,7 @@ class RWP_Features_Widget extends SiteOrigin_Widget {
 				'label' => __('Add Features', 'recommendwp-widgets'),
 				'item_name' => __('Feature', 'recommendwp-widgets'),
 				'item_label' => array(
-					'selector' => "[id*='repeat_text']",
+					'selector' => "[id*='headline']",
 					'update_event' => 'change',
 					'value_method' => 'val'
 				),
