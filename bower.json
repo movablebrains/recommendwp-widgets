@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "owl.carousel": "^2.2.1",
-    "bourbon": "^4.3.3",
+    "bourbon": "^4.3.4",
     "neat": "^2.0.0",
     "magnific-popup": "^1.1.0",
     "sass-flex-mixin": "^1.0.3"
