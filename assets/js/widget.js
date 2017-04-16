@@ -213,6 +213,66 @@
                 }
             }
 
+            // Post Carousel
+            if ($('.rwpw-post-carousel').length > 0) {
+                $('.rwpw-post-carousel').each(function (index) {
+                    var instance = $(this).data('instance');
+                    carouselInstance(instance);
+                });
+
+                function carouselInstance(instance) {
+                    var obj = window['postcarousel' + instance];
+                    
+                    var sid = obj.id,
+                        item = obj.items,
+                        navigation = (obj.navigation == "true"),
+                        pagination = (obj.pagination == "true"),
+                        autoplay = (obj.autoplay == "true"),
+                        smartspeed = obj.duration,
+                        fluidspeed = obj.speed,
+                        autoheight = (obj.autoheight == "true"),
+                        autowidth = (obj.autowidth == "true"),
+                        mergefit = (obj.mergefit == "true"),
+                        center = (obj.center == "true"),
+                        slidesmobile = obj.slidesMobile,
+                        slidestablet = obj.slidesTablet,
+                        loop = (obj.loop == "true"),
+                        margin = obj.margin;
+
+                    var owl = $('#' + sid);
+
+                    owl.owlCarousel({
+                        items: item,
+                        margin: parseInt(margin),
+                        nav: navigation,
+                        dots: pagination,
+                        autoplay: autoplay,
+                        smartSpeed: smartspeed,
+                        fluidSpeed: fluidspeed,
+                        loop: loop,
+                        autoHeight: autoheight,
+                        center: center,
+                        mergeFit: mergefit,
+                        autoWidth: autowidth,
+                        navText: ['<i class="material-icons">keyboard_arrow_left</i>', '<i class="material-icons">keyboard_arrow_right</i>'],
+                        responsive: {
+                            0: {
+                                items: slidesmobile,
+                                nav: navigation
+                            },
+                            768: {
+                                items: slidestablet,
+                                nav: navigation
+                            },
+                            1024: {
+                                items: item,
+                                nav: navigation
+                            }
+                        }
+                    });
+                }
+            }
+
             // Popup
             if($('.rwpw-button-popup').length > 0) {
                 $('.rwpw-button-popup').each(function(index){
