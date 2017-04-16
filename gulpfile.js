@@ -32,7 +32,7 @@ gulp.task('source:css', function(){
 // Vendor JS
 gulp.task('vendor:js', function(){
     return gulp.src([
-        'assets/js/vendor/*.js',
+        'bower_components/owl.carousel/dist/owl.carousel.js',
         'bower_components/magnific-popup/dist/jquery.magnific-popup.js'
     ])
     .pipe(foreach(function(stream, file){
