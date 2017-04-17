@@ -274,16 +274,16 @@
             }
 
             // Popup
-            if($('.rwpw-button-popup').length > 0) {
-                $('.rwpw-button-popup').each(function(index){
+            if($('.rwpw-popup').length > 0) {
+                $('.rwpw-popup').each(function(index){
                     var instance = $(this).data('instance');
-                    buttonInstance(instance);
+                    popupInstance(instance);
                 });
-                function buttonInstance(instance) {
-                    var obj = window['btn' + instance];
+                function popupInstance(instance) {
+                    var obj = window['popup' + instance];
                     var sid = obj.id, 
                         type = obj.type;
-                    var popup = $('#' + sid);
+                    var popup = $('#' + sid + ' .btn');
                     popup.magnificPopup({
                         type: type,
                         mainClass: 'mfp-fade',
