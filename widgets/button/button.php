@@ -144,41 +144,6 @@ class RWP_Button_Widget extends SiteOrigin_Widget {
         			)
         		)
         	),
-            'popup' => array(
-                'type' => 'section',
-                'label' => __( 'Popup', 'recommendwp-widgets' ),
-                'hide' => true,
-                'fields' => array(
-                    'id' => array(
-                        'type' => 'text',
-                        'label' => __( 'Popup ID', 'recommendwp-widgets' )
-                    ),
-                    'type' => array(
-                        'type' => 'select',
-                        'label' => __( 'Popup Type', 'recommendwp-widgets' ),
-                        'default' => 'default',
-                        'options' => array(
-                            'default' => __( 'None', 'recommendwp-widgets' ),
-                            'inline' => __( 'Inline', 'recommendwp-widgets' ),
-                            'iframe' => __( 'iFrame', 'recommendwp-widgets' )
-                        )
-                    ),
-                    'content' => array(
-                        'type' => 'tinymce',
-                        'label' => __( 'Popup Content', 'recommendwp-widgets' ),
-                        'default' => '',
-                        'rows' => 10,
-                        'default_editor' => 'tinymce',
-                        'button_filters' => array(
-                            'mce_buttons' => array( $this, 'filter_mce_buttons' ),
-                            'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
-                            'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
-                            'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
-                            'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
-                        ),
-                    )
-                ) 
-            ),
         );
     }
 

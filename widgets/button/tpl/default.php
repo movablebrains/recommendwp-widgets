@@ -1,9 +1,6 @@
 <?php
 $classes = array();
 $classes[] = 'btn';
-if ( $popup_type != 'default' ) {
-	$classes[] = 'rwpw-button-popup';
-}
 $classes[] = 'btn-' . $design;
 $classes[] = 'icon-' . $icon_position;
 
@@ -19,22 +16,6 @@ $attributes['target'] = esc_attr( $target );
 $attributes['href'] = esc_url( $url );
 $attributes['id'] = 'btn-' . (int)$widget_id;
 $attributes['data-instance'] = (int)$widget_id;
-
-// Popup
-if ( $popup_type != 'default' ) {
-	wp_enqueue_script( 'rwpw-magnific-popup-js' );
-	wp_enqueue_script( 'rwpw-widgets-js' );
-
-	$attr = array();
-	$attr['type'] = $popup_type;
-	$attr['id'] = 'btn-' . (int)$widget_id;
-
-	wp_localize_script( 'rwpw-widgets-js', 'btn' . (int)$widget_id, $attr );
-
-	$attrib = array();
-	$attrib['class'] = 'mfp-hide ' . $popup_id . '-content';
-	$attrib['id'] = $popup_id;
-}
 ?>
 
 <a <?php foreach( $attributes as $name => $value ) echo $name . '="' . $value . '" ' ?>>
@@ -56,9 +37,3 @@ if ( $popup_type != 'default' ) {
 		} ?>
 	</span>
 </a>
-
-<?php if ( $popup_type == 'inline' ) { ?>
-	<div <?php foreach( $attrib as $key => $value ) echo $key . '="' . $value . '"'; ?>>
-		<?php echo do_shortcode( $popup_content, false ); ?>
-	</div>
-<?php } ?>
