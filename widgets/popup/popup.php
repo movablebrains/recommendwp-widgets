@@ -41,6 +41,7 @@ class RWP_Popup_Widget extends SiteOrigin_Widget {
                 'label' => __( 'Type', 'recommendwp-widgets' ),
                 'default' => 'inline',
                 'options' => array(
+                    'none' => __( 'None', 'recommendwp-widgets' ),
                     'ajax' => __( 'Ajax', 'recommendwp-widgets' ),
                     'image' => __( 'Image', 'recommendwp-widgets' ),
                     'inline' => __( 'Inline', 'recommendwp-widgets' ),
