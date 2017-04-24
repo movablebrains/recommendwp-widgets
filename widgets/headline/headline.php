@@ -25,6 +25,10 @@ class RWP_Headline_Widget extends SiteOrigin_Widget {
 	}
 	function get_widget_form() {
 		return array(
+			'class' => array(
+				'type' => 'text',
+				'label' => __( 'Class', 'recommendwp-widgets' )
+			),
 			'title' => array(
 				'type' => 'text',
 				'label' => __( 'Title', 'recommendwp-widgets' )
@@ -59,6 +63,7 @@ class RWP_Headline_Widget extends SiteOrigin_Widget {
 
 	function get_template_variables( $instance, $args ) {
 		return array(
+			'class' => $instance['class'],
 			'title' => $instance['title'],
 			'subtitle' => $instance['subtitle']
 		);
