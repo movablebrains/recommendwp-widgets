@@ -2,7 +2,7 @@
 /*
 Plugin Name: RecommendWP Widgets
 Description: A collection of widgets for WordPress built using the SiteOrigin Widgets API.
-Version: 1.3.2
+Version: 1.3.3
 Author: RecommendWP
 Author URI: http://www.recommendwp.com
 Bitbucket Plugin URI: https://bitbucket.org/webdevsuperfast/recommendwp-widgets
@@ -40,7 +40,7 @@ class RecommendWP_Widgets {
 			wp_enqueue_style( 'rwpw-css' );
 
 			// Material Icon
-			wp_enqueue_style( 'rwpw-material-icon', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), null ); 
+			wp_enqueue_style( 'rwpw-material-icon', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), null );
 
 			// Owl Carousel JS
 			wp_register_script( 'rwpw-owl-carousel-js', plugin_dir_url( __FILE__ ) . 'assets/js/owl.carousel.min.js', array( 'jquery' ), null, true );
@@ -50,7 +50,7 @@ class RecommendWP_Widgets {
 
 			// Widget JS
 			wp_register_script( 'rwpw-widgets-js', plugin_dir_url( __FILE__ ) . 'assets/js/widget.js', array( 'jquery' ), null, true );
-			
+
 			wp_enqueue_script( 'rwpw-widgets-js' );
 		}
 	}
