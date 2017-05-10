@@ -24,7 +24,7 @@ echo '<div class="features-widget">';
 			$headline = $feature['headline'];
 			$subheadline = $feature['subheadline'];
 			$button_text = $feature['button_text'];
-			$button_link = $feature['button_link'];
+			$button_link = sow_esc_url( $feature['button_link'] );
 			?>
 			<li <?php foreach( $attributes as $name => $value ) echo $name . '="' . $value . '" ' ?>>
 				<div class="feature-content">

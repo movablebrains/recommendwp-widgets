@@ -13,7 +13,7 @@ $attributes = array();
 
 $attributes['class'] = esc_attr( implode( ' ', $classes ) );
 $attributes['target'] = esc_attr( $target );
-$attributes['href'] = esc_url( $url );
+$attributes['href'] = sow_esc_url( $url );
 $attributes['id'] = 'btn-' . (int)$widget_id;
 $attributes['data-instance'] = (int)$widget_id;
 ?>

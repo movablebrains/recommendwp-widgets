@@ -27,7 +27,7 @@ echo '<div class="image-carousel-widget">';
     );
 
     $attributes = array();
-        
+
     $attributes['items'] = (int) $slides;
 
     $attributes['navigation'] = $options['navigation'] == true ? 'true' : 'false';
@@ -52,7 +52,7 @@ echo '<div class="image-carousel-widget">';
     if ( is_array( $images ) && !is_wp_error( $images ) ) { ?>
         <div <?php foreach( $attr as $name => $value ) echo $name . '="' . $value . '" ' ?>>
             <?php foreach( $images as $image ) {
-                $link = $image['link'];
+                $link = sow_esc_url( $image['link'] );
                 $alt = $image['alt'];
                 $imagesource = wp_get_attachment_image_src( $image['image'], 'full' );
                 $url = $imagesource[0];
