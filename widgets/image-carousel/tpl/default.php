@@ -12,7 +12,7 @@ $widget_id = preg_replace( '/[^0-9]/', '', $widget_id );
 echo '<div class="image-carousel-widget">';
     $images = $instance['images'];
     $options = $instance['slideshow'];
-    $imageattr = $instance['image_settings'];
+    $imageattr = $instance['settings'];
 
     $classes = array();
 
