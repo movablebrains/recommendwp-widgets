@@ -28,8 +28,9 @@ class RecommendWP_Widgets {
 		}
 
 		//* Require if mr_image_resize function exists
-		if ( function_exists( 'mr_image_resize' ) )
+		if ( function_exists( 'mr_image_resize' ) ) {
 			require_once( plugin_dir_path( __FILE__ ) . 'lib/misc.php' );
+		}
 
 	}
 
