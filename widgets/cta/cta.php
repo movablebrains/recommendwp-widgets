@@ -23,8 +23,8 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
     }
 
     function initialize() {
-        if( !class_exists('RWP_Button_Widget') ) {
-            SiteOrigin_Widgets_Bundle::single()->include_widget( 'rwp-button' );
+        if( !class_exists('RWP_Popup_Widget') ) {
+            SiteOrigin_Widgets_Bundle::single()->include_widget( 'rwp-popup' );
         }
         if( !class_exists('RWP_Image_Widget') ) {
             SiteOrigin_Widgets_Bundle::single()->include_widget( 'rwp-image' );
@@ -55,8 +55,8 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
             ),
             'button' => array(
             	'type' => 'widget',
-            	'label' => __( 'Button', 'recommendwp-widgets' ),
-            	'class' => 'RWP_Button_Widget'
+            	'label' => __( 'Popup', 'recommendwp-widgets' ),
+            	'class' => 'RWP_Popup_Widget'
             ),
             'settings' => array(
             	'type' => 'section',
@@ -110,9 +110,11 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
     }
 
     function modify_child_widget_form( $child_widget_form, $child_widget ) {
-		unset( $child_widget_form['settings']['fields']['alignment'] );
-		unset( $child_widget_form['title'] );
-        unset( $child_widget_form['content'] );
+        if ( get_class( $child_widget ) == 'RWP_Image_Widget' ) {
+            unset( $child_widget_form['settings']['fields']['alignment'] );
+            unset( $child_widget_form['title'] );
+            unset( $child_widget_form['content'] );
+        }
         
 		return $child_widget_form;
 	}
