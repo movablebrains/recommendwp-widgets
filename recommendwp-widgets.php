@@ -50,7 +50,7 @@ class RecommendWP_Widgets {
 			wp_register_script( 'rwpw-magnific-popup-js', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.magnific-popup.min.js', array( 'jquery' ), null, true );
 
 			// Widget JS
-			wp_register_script( 'rwpw-widgets-js', plugin_dir_url( __FILE__ ) . 'assets/js/widget.js', array( 'jquery' ), null, true );
+			wp_register_script( 'rwpw-widgets-js', plugin_dir_url( __FILE__ ) . 'assets/js/widget.min.js', array( 'jquery' ), null, true );
 
 			wp_enqueue_script( 'rwpw-widgets-js' );
 		}
