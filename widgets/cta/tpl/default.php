@@ -11,8 +11,13 @@
 					echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
 				}
 			?>
+			
+			<?php if ( $subtitle ) {
+				echo '<p class="subtitle">' . wp_kses_post( $subtitle ) . '</p>';
+			} ?>
+
 			<?php if ( $display_content == true ) { ?>
-				<?php $this->sub_widget('SiteOrigin_Widget_Editor_Widget', $args, $instance['content']) ?>
+				<?php echo wp_kses_post( $content ); ?>
 			<?php } ?>
 		</div>
 		<?php if ( $display_button == true ) { ?>

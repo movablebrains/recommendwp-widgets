@@ -38,10 +38,15 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
                 'label' => __( 'Title', 'recommendwp-widgets' ),
                 'default' => __( '', 'recommendwp-widgets' )
             ),
+            'subtitle' => array(
+                'type' => 'text',
+                'label' => __( 'Subtitle', 'recommendwp-widgets' ),
+                'default' => __( '', 'recommendwp-widgets' )
+            ),
             'content' => array(
-                'type' => 'widget',
+                'type' => 'textarea',
                 'label' => __( 'Content', 'recommendwp-widgets' ),
-                'class' => 'SiteOrigin_Widget_Editor_Widget'
+                'default' => __( '', 'recommendwp-widgets' )
             ),
             'image' => array(
             	'type' => 'widget',
@@ -88,6 +93,7 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
     function get_template_variables( $instance, $args ) {
         return array(
             'title' => !empty( $instance['title'] ) ? $instance['title'] : '',
+            'subtitle' => !empty( $instance['subtitle'] ) ? $instance['subtitle'] : '',
             'content' => !empty( $instance['content'] ) ? $instance['content'] : '',
             'design' => $instance['settings']['design'],
             'display_image' => $instance['settings']['display_image'],
@@ -116,10 +122,6 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
             unset( $child_widget_form['content'] );
             unset( $child_widget_form['template'] );
         }
-
-        if ( get_class( $child_widget ) == 'SiteOrigin_Widget_Editor_Widget' ) {
-            unset( $child_widget_form['title'] );
-        }
         
 		return $child_widget_form;
 	}
@@ -131,6 +133,12 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
             $instance['title'] = $instance['headline'];
 
             unset( $instance['headline'] );
+        }
+
+        if ( empty( $instance['subtitle'] ) ) {
+            $instance['subtitle'] = array();
+            $instance['subtitle'] = $instance['subheadline'];
+
             unset( $instance['subheadline'] );
         }
 
