@@ -33,20 +33,15 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
 
     function get_widget_form() {
         return array(
-            'headline' => array(
+            'title' => array(
                 'type' => 'text',
-                'label' => __( 'Heading', 'recommendwp-widgets' ),
-                'default' => __( '', 'recommendwp-widgets' )
-            ),
-            'subheadline' => array(
-                'type' => 'text',
-                'label' => __( 'Subheading', 'recommendwp-widgets' ),
+                'label' => __( 'Title', 'recommendwp-widgets' ),
                 'default' => __( '', 'recommendwp-widgets' )
             ),
             'content' => array(
-                'type' => 'textarea',
+                'type' => 'widget',
                 'label' => __( 'Content', 'recommendwp-widgets' ),
-                'default' => __( '', 'recommendwp-widgets' )
+                'class' => 'SiteOrigin_Widget_Editor_Widget'
             ),
             'image' => array(
             	'type' => 'widget',
@@ -75,6 +70,11 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
             			'label' => __( 'Display Image', 'recommendwp-widgets' ),
             			'default' => true
             		),
+                    'display_content' => array(
+                        'type' => 'checkbox',
+            			'label' => __( 'Display Content', 'recommendwp-widgets' ),
+            			'default' => true
+                    ),
             		'display_button' => array(
             			'type' => 'checkbox',
             			'label' => __( 'Display Button', 'recommendwp-widgets' ),
@@ -87,11 +87,11 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
 
     function get_template_variables( $instance, $args ) {
         return array(
-            'headline' => !empty( $instance['headline'] ) ? $instance['headline'] : '',
-            'subheadline' => !empty( $instance['subheadline'] ) ? $instance['subheadline'] : '',
+            'title' => !empty( $instance['title'] ) ? $instance['title'] : '',
             'content' => !empty( $instance['content'] ) ? $instance['content'] : '',
             'design' => $instance['settings']['design'],
             'display_image' => $instance['settings']['display_image'],
+            'display_content' => $instance['settings']['display_content'],
             'display_button' => $instance['settings']['display_button']
         );
     }
@@ -114,10 +114,28 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
             unset( $child_widget_form['settings']['fields']['alignment'] );
             unset( $child_widget_form['title'] );
             unset( $child_widget_form['content'] );
+            unset( $child_widget_form['template'] );
+        }
+
+        if ( get_class( $child_widget ) == 'SiteOrigin_Widget_Editor_Widget' ) {
+            unset( $child_widget_form['title'] );
         }
         
 		return $child_widget_form;
 	}
+
+    function modify_instance( $instance ) {
+
+        if ( empty( $instance['title'] ) ) {
+            $instance['title'] = array();
+            $instance['title'] = $instance['headline'];
+
+            unset( $instance['headline'] );
+            unset( $instance['subheadline'] );
+        }
+
+        return $instance;
+    }
 }
 
 siteorigin_widget_register( 'rwpw-cta', __FILE__, 'RWP_CTA_Widget' );
