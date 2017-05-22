@@ -17,12 +17,12 @@ var gulp = require('gulp'),
     del = require('del');
 
 // CSS
-gulp.task('source:css', function(){
+gulp.task('styles', function(){
     return gulp.src('assets/scss/*.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(autoprefixer('> 0%'))
         .pipe(cmq())
-        .pipe(prettify())
+        .pipe(cleancss())
         .pipe(gulp.dest('temp/css'))
         .pipe(rename('widget.css'))
         .pipe(gulp.dest('assets/css'))
@@ -30,10 +30,11 @@ gulp.task('source:css', function(){
 } );
 
 // Vendor JS
-gulp.task('vendor:js', function(){
+gulp.task('scripts', function(){
     return gulp.src([
         'bower_components/owl.carousel/dist/owl.carousel.js',
-        'bower_components/magnific-popup/dist/jquery.magnific-popup.js'
+        'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+        'assets/js/sources/*.js'
     ])
     .pipe(foreach(function(stream, file){
         return stream
@@ -54,13 +55,13 @@ gulp.task('clean:temp', function(){
 
 // Default task
 gulp.task('default', ['clean:temp'], function() {
-    gulp.start('source:css', 'watch');
-    gulp.start('vendor:js', 'watch');
+    gulp.start('styles', 'watch');
+    gulp.start('scripts', 'watch');
 });
 
 // Watch
 gulp.task('watch', function() {
     // Watch .scss files
-    gulp.watch(['assets/scss/*.scss', 'assets/sass/**/*.scss'], ['source:css']);
-    gulp.watch(['assets/js/vendor/*.js'], ['vendor:js']);
+    gulp.watch(['assets/scss/*.scss', 'assets/sass/**/*.scss'], ['styles']);
+    gulp.watch(['assets/js/sources/*.js'], ['scripts']);
 });
