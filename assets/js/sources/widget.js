@@ -254,7 +254,6 @@
                         center: center,
                         mergeFit: mergefit,
                         autoWidth: autowidth,
-                        navText: ['<i class="material-icons">keyboard_arrow_left</i>', '<i class="material-icons">keyboard_arrow_right</i>'],
                         responsive: {
                             0: {
                                 items: slidesmobile,
