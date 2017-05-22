@@ -144,6 +144,25 @@ class RWP_Button_Widget extends SiteOrigin_Widget {
         			)
         		)
         	),
+			'popup' => array(
+				'type' => 'section',
+				'label' => __( 'Popup', 'recommendwp-widgets' ),
+				'hide' => true,
+				'fields' => array(
+					'type' => array(
+						'type' => 'select',
+						'label' => __( 'Type', 'recommendwp-widgets' ),
+						'default' => 'none',
+						'options' => array(
+							'none' => __( 'None', 'recommendwp-widgets' ),
+							'ajax' => __( 'Ajax', 'recommendwp-widgets' ),
+							'image' => __( 'Image', 'recommendwp-widgets' ),
+							'inline' => __( 'Inline', 'recommendwp-widgets' ),
+							'iframe' => __( 'iFrame', 'recommendwp-widgets' )
+						)
+					),
+				)
+			)
         );
     }
 
@@ -168,9 +187,7 @@ class RWP_Button_Widget extends SiteOrigin_Widget {
 			'icon_size' => $instance['icon']['size'],
             'icon_color' => $instance['icon']['color'],
 			'icon_position' => $instance['icon']['position'],
-            'popup_id' => $instance['popup']['id'],
             'popup_type' => $instance['popup']['type'],
-            'popup_content' => $instance['popup']['content']
 		);
 
 		return $variables;

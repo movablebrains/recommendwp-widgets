@@ -11,10 +11,26 @@ $widget_id = preg_replace( '/[^0-9]/', '', $widget_id );
 
 $attributes = array();
 
+if ( $popup_content != 'none' ) {
+	$classes[] = 'rwpw-popup';
+	wp_enqueue_script( 'rwpw-magnific-popup-js' );
+	wp_enqueue_script( 'rwpw-widgets-js' );
+	$attr = array();
+
+	$attr['type'] = $popup_type;
+	$attr['id'] = 'popup-' . (int)$widget_id;
+
+	wp_localize_script( 'rwpw-widgets-js', 'popup' . (int)$widget_id, $attr );
+}
+
 $attributes['class'] = esc_attr( implode( ' ', $classes ) );
 $attributes['target'] = esc_attr( $target );
 $attributes['href'] = sow_esc_url( $url );
-$attributes['id'] = 'btn-' . (int)$widget_id;
+if ( $popup_content != 'none' ) {
+	$attributes['id'] = 'popup-' . (int)$widget_id;
+} else {
+	$attributes['id'] = 'btn-' . (int)$widget_id;
+}
 $attributes['data-instance'] = (int)$widget_id;
 ?>
 
