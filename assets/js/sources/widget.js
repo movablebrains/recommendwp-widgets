@@ -66,7 +66,6 @@
                         center: center,
                         mergeFit: mergefit,
                         autoWidth: autowidth,
-                        navText: ['<i class="material-icons">keyboard_arrow_left</i>', '<i class="material-icons">keyboard_arrow_right</i>'],
                         responsive: {
                             0: {
                                 items: slidesmobile,
@@ -130,7 +129,6 @@
                         mergeFit: mergefit,
                         autoWidth: autowidth,
                         lazyLoad: true,
-                        navText: ['<i class="material-icons">keyboard_arrow_left</i>', '<i class="material-icons">keyboard_arrow_right</i>'],
                         video: true,
                         videoWidth: videox,
                         videoHeight: videoy,
@@ -193,8 +191,6 @@
                         center: center,
                         mergeFit: mergefit,
                         autoWidth: autowidth,
-                        // navText: ['&#xf104;', '&#xf105;'],
-                        navText: ['<i class="material-icons">keyboard_arrow_left</i>', '<i class="material-icons">keyboard_arrow_right</i>'],
                         responsive: {
                             0: {
                                 items: slidesmobile,
