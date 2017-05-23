@@ -49,7 +49,7 @@ class RecommendWP_Widgets {
 			// Widget JS
 			wp_register_script( 'rwpw-widgets-js', plugin_dir_url( __FILE__ ) . 'assets/js/widget.min.js', array( 'jquery' ), null, true );
 
-			wp_enqueue_script( 'rwpw-widgets-js' );
+			// wp_enqueue_script( 'rwpw-widgets-js' );
 		}
 	}
 
