@@ -270,24 +270,21 @@
 
             // Popup
             if($('.rwpw-popup').length > 0) {
-                $('.rwpw-popup').each(function(index){
-                    var instance = $(this).data('instance');
-                    popupInstance(instance);
-                });
-                function popupInstance(instance) {
-                    var obj = window['popup' + instance];
-                    var sid = obj.id, 
-                        type = obj.type;
-                    var popup = $('#' + sid);
-                    popup.magnificPopup({
-                        type: type,
-                        mainClass: 'mfp-fade',
-                        removalDelay: 160,
-                        preloader: false,
-                        fixedContentPos: false,
-                        closeMarkup: '<a title="%title%" class="mfp-close">&#215;</a>'
+                $('.rwpw-popup').each(function(){
+                    $(this).on('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var $type = $(this).data('mfp-type')
+                        $(this).magnificPopup({
+                            type: $type,
+                            mainClass: 'mfp-fade',
+                            removalDelay: 160,
+                            preloader: false,
+                            fixedContentPos: false,
+                            closeMarkup: '<a title="%title%" class="mfp-close">&#215;</a>'
+                        }).magnificPopup('open');
                     });
-                }
+                });
             }
 		});
 	})();

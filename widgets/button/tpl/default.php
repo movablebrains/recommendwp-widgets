@@ -28,6 +28,8 @@ $attributes['target'] = esc_attr( $target );
 $attributes['href'] = sow_esc_url( $url );
 if ( $popup_content != 'none' ) {
 	$attributes['id'] = 'popup-' . (int)$widget_id;
+	$attributes['data-mfp-src'] = sow_esc_url( $url );
+	$attributes['data-mfp-type'] = $popup_type;
 } else {
 	$attributes['id'] = 'btn-' . (int)$widget_id;
 }
