@@ -139,7 +139,7 @@ class RWP_Image_Widget extends SiteOrigin_Widget {
 	}
 
 	function get_style_name( $instance ) {
-		return '';
+		return false;
 	}
 
 	function get_template_variables( $instance, $args ) {

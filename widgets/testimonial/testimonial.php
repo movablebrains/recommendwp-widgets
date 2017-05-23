@@ -181,7 +181,7 @@ class RWP_Testimonial_Widget extends SiteOrigin_Widget {
     }
 
     function get_style_name( $instance ) {
-        return 'default';
+        return false;
     }
 
     function get_template_variables( $instance, $args ) {

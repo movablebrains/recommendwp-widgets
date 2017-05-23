@@ -112,7 +112,7 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
     }
 
     function get_style_name( $instance ) {
-    	return 'default';
+    	return false;
     }
 
     function modify_child_widget_form( $child_widget_form, $child_widget ) {

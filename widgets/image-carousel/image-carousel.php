@@ -183,12 +183,7 @@ class Image_Carousel_Widget extends SiteOrigin_Widget {
     }
 
     function get_style_name( $instance ) {
-        switch ( $instance['template'] ) {
-            case 'default':
-            default:
-                return 'default';
-                break;
-        }
+        return false;
     }
 
 	function get_template_variables( $instance, $args ) {

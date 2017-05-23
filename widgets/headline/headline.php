@@ -58,7 +58,7 @@ class RWP_Headline_Widget extends SiteOrigin_Widget {
 	}
 
 	function get_style_name( $instance ) {
-		return '';
+		return false;
 	}
 
 	function get_template_variables( $instance, $args ) {
