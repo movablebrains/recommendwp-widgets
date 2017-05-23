@@ -2,7 +2,7 @@
 /*
 Plugin Name: RecommendWP Widgets
 Description: A collection of widgets for WordPress built using the SiteOrigin Widgets API.
-Version: 1.3.8
+Version: 1.3.9
 Author: RecommendWP
 Author URI: http://www.recommendwp.com
 Bitbucket Plugin URI: https://bitbucket.org/webdevsuperfast/recommendwp-widgets
