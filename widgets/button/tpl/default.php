@@ -11,7 +11,7 @@ $widget_id = preg_replace( '/[^0-9]/', '', $widget_id );
 
 $attributes = array();
 
-if ( $popup_content != 'none' ) {
+if ( $popup_type != 'none' ) {
 	$classes[] = 'rwpw-popup';
 	wp_enqueue_script( 'rwpw-magnific-popup-js' );
 	wp_enqueue_script( 'rwpw-widgets-js' );
@@ -26,7 +26,7 @@ if ( $popup_content != 'none' ) {
 $attributes['class'] = esc_attr( implode( ' ', $classes ) );
 $attributes['target'] = esc_attr( $target );
 $attributes['href'] = sow_esc_url( $url );
-if ( $popup_content != 'none' ) {
+if ( $popup_type != 'none' ) {
 	$attributes['id'] = 'popup-' . (int)$widget_id;
 	$attributes['data-mfp-src'] = sow_esc_url( $url );
 	$attributes['data-mfp-type'] = $popup_type;
