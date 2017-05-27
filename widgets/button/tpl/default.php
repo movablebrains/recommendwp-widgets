@@ -34,6 +34,15 @@ if ( $popup_type != 'none' ) {
 	$attributes['id'] = 'btn-' . (int)$widget_id;
 }
 $attributes['data-instance'] = (int)$widget_id;
+
+if ( is_array( $attrs ) && !is_wp_error( $attrs ) ) {
+	foreach ( $attrs as $attr ) {
+		$att = $attr['attribute'];
+		$val = $attr['value'];
+
+		$attributes[$att] = $val;
+	}
+}
 ?>
 
 <a <?php foreach( $attributes as $name => $value ) echo $name . '="' . $value . '" ' ?>>
