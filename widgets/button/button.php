@@ -49,6 +49,28 @@ class RWP_Button_Widget extends SiteOrigin_Widget {
 					'_blank' => 'Blank'
 				)
 			),
+			'attributes' => array(
+				'type' => 'repeater',
+				'label' => __('Add Attribute', 'recommendwp-widgets'),
+				'item_name' => __('Attribute', 'recommendwp-widgets'),
+				'item_label' => array(
+					'selector' => "[id*='attribute']",
+					'update_event' => 'change',
+					'value_method' => 'val'
+				),
+				'fields' => array(
+					'attribute' => array(
+						'type' => 'text',
+						'label' => __( 'Attribute', 'recommendwp-widgets' ),
+						'default' => ''
+					),
+					'value' => array(
+						'type' => 'text',
+						'label' => __('Value', 'recommendwp-widgets'),
+						'default' => '',
+					)
+				)
+			),
         	'settings' => array(
         		'type' => 'section',
         		'label' => __( 'Button Settings', 'recommendwp-widgets' ),
@@ -162,6 +184,14 @@ class RWP_Button_Widget extends SiteOrigin_Widget {
 						)
 					),
 				)
+			),
+			'template' => array(
+				'type' => 'select',
+				'label' => __( 'Template', 'recommendwp-widgets' ),
+				'default' => 'none',
+				'options' => array(
+					'default' => __( 'Default', 'recommendwp-widgets' ),
+				)
 			)
         );
     }
@@ -188,6 +218,7 @@ class RWP_Button_Widget extends SiteOrigin_Widget {
             'icon_color' => $instance['icon']['color'],
 			'icon_position' => $instance['icon']['position'],
             'popup_type' => $instance['popup']['type'],
+			'attrs' => $instance['attributes']
 		);
 
 		return $variables;
