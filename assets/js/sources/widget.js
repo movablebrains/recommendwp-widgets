@@ -279,9 +279,9 @@
                             type: $type,
                             mainClass: 'mfp-fade',
                             removalDelay: 160,
-                            preloader: false,
-                            fixedContentPos: false,
-                            closeMarkup: '<a title="%title%" class="mfp-close">&#215;</a>'
+                            preloader: true,
+                            fixedContentPos: true,
+                            closeMarkup: '<a title="%title%" class="mfp-close">&#215;</a>',
                         }).magnificPopup('open');
                     });
                 });
