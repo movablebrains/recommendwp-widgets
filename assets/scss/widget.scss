@@ -106,21 +106,25 @@ $image-path: '../../images';
 ----------------------------------------------------------------------------- */
 .widget_rwpw-side-image {
 	.side-image-default {
-		.images-wrapper {
+		.image-wrapper {
 			background-size: cover;
 			background-position: left top;
 			background-repeat: no-repeat;
 			display: block;
+			width: 50%;
+		}
+		.content-wrapper {
+			width: 50%;
 		}
 	}
-}
-
-div[data-padding="left-padding"] {
-	padding-left: 0px !important;
-}
-
-div[data-padding="right-padding"] {
-	padding-right: 0px !important;
+	.side-image {
+		@include flexbox;
+		&.right-image {
+			.image-wrapper {
+				order: 2;
+			}
+		}
+	}
 }
 
 /* Button Widget
