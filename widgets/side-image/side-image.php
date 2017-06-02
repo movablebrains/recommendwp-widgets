@@ -34,6 +34,15 @@ class RWP_Side_Image extends SiteOrigin_Widget {
 				'update' => __('Set image', 'recommendwp-widgets'),
 				'library' => 'image'
 			),
+			'image_position' => array(
+				'type' => 'select',
+				'label' => __( 'Image position', 'recommendwp-widgets' ),
+				'options' => array(
+					'left-image' => __( 'Left', 'recommendwp-widgets' ),
+					'right-image' => __( 'Right', 'recommendwp-widgets' )
+				),
+				'default' => 'left-image'
+			),
 			'editor' => array(
 				'type' => 'widget',
 				'label' => __( 'Editor', 'recommendwp-widgets' ),
@@ -71,7 +80,8 @@ class RWP_Side_Image extends SiteOrigin_Widget {
 				'type' => 'select',
 				'label' => __( 'Template', 'recommendwp-widgets' ),
 				'options' => array(
-					'default' => 'Default',
+					'default' => __( 'Default', 'recommendwp-widgets' ),
+					'img' => __( 'Image in img tag', 'recommendwp-widgets' )
 				),
 				'default' => 'default'
 			)
@@ -84,6 +94,9 @@ class RWP_Side_Image extends SiteOrigin_Widget {
             default:
                 return 'default';
                 break;
+			case 'img':
+				return 'image';
+				break;
         }
 	}
 
@@ -94,8 +107,17 @@ class RWP_Side_Image extends SiteOrigin_Widget {
 			'template' => $instance['template'],
 			'display_image' => $instance['settings']['display_image'],
 			'display_content' => $instance['settings']['display_content'],
-            'display_button' => $instance['settings']['display_button']
+            'display_button' => $instance['settings']['display_button'],
+			'image_position' => $instance['image_position']
 		);
+	}
+
+	function modify_child_widget_form( $child_widget_form, $child_widget ) {
+        if ( get_class( $child_widget ) == 'RWP_Button_Widget' ) {
+            unset( $child_widget_form['template'] );
+        }
+        
+		return $child_widget_form;
 	}
 }
 
