@@ -122,6 +122,10 @@ class RWP_CTA_Widget extends SiteOrigin_Widget {
             unset( $child_widget_form['content'] );
             unset( $child_widget_form['template'] );
         }
+
+        if ( get_class( $child_widget ) == 'RWP_Button_Widget' ) {
+            unset( $child_widget_form['template'] );
+        }
         
 		return $child_widget_form;
 	}
