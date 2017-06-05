@@ -27,7 +27,7 @@ echo '<div class="features-widget">';
 			$button_link = sow_esc_url( $feature['button_link'] );
 			?>
 			<li <?php foreach( $attributes as $name => $value ) echo $name . '="' . $value . '" ' ?>>
-				<div class="feature-content">
+				<div class="feature-wrapper">
 					<div class="feature-image">
 						<?php if( $icon_image == 'image' ) { ?>
 						<?php echo $imgsrc ? '<img src="'.$imgsrc.'" alt="" />' : ''; ?>
@@ -44,7 +44,7 @@ echo '<div class="features-widget">';
 					<div class="feature-header">
 						<?php echo $headline ? '<h4>'.$headline.'</h4>' : ''; ?>
 					</div>
-					<div class="feature-copy">
+					<div class="feature-content">
 						<?php echo $subheadline ? wpautop( do_shortcode( $subheadline ), false ) : ''; ?>
 						<?php echo $button_link ? '<a class="feature-button" href="'.$button_link.'">'.$button_text.'</a>' : ''; ?>
 					</div>
