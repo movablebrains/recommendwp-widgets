@@ -18,10 +18,6 @@ class RecommendWP_Widgets {
 
 		add_filter( 'siteorigin_panels_widget_args', array( $this, 'rwpw_widget_args' ) );
 
-		foreach ( glob( plugin_dir_path( __FILE__ ) . "widgets/*.php" ) as $file ) {
-			include_once $file;
-		}
-
 		//* Require if mr_image_resize function doesn't exist
 		if ( !function_exists( 'mr_image_resize' ) ) {
 			require_once( plugin_dir_path( __FILE__ ) . 'lib/mr-image-resize.php' );
