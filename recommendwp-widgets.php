@@ -16,7 +16,11 @@ class RecommendWP_Widgets {
 
 		add_filter( 'siteorigin_widgets_widget_folders', array( $this, 'rwpw_widget_folders' ) );
 
-		add_filter( 'siteorigin_panels_widget_args', array( $this, 'rwpw_widget_args' ) );
+		// add_filter( 'siteorigin_panels_widget_args', array( $this, 'rwpw_widget_args' ) );
+
+		add_action( 'siteorigin_widgets_enqueue_admin_scripts_rwpw-features', array( $this, 'rwpw_features_admin_scripts' ), 10, 2 );
+
+		add_action( 'siteorigin_panel_enqueue_admin_scripts', array( $this, 'rwpw_features_admin_scripts' ) );
 
 		//* Require if mr_image_resize function doesn't exist
 		if ( !function_exists( 'mr_image_resize' ) ) {
@@ -47,6 +51,11 @@ class RecommendWP_Widgets {
 
 			// wp_enqueue_script( 'rwpw-widgets-js' );
 		}
+	}
+
+	public function rwpw_features_admin_scripts() {
+		wp_register_script( 'rwpw-features-js', plugin_dir_url( __FILE__ ) . 'assets/js/features.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'rwpw-features-js' );
 	}
 
 	public function rwpw_widget_folders( $folders ) {
