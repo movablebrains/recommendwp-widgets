@@ -1,14 +1,19 @@
 <?php
 /*
 Plugin Name: RecommendWP Widgets
-Description: A collection of widgets for WordPress built using the SiteOrigin Widgets API.
-Version: 1.3.12
-Author: RecommendWP
-Author URI: http://www.recommendwp.com
+Plugin URI: https://bitbucket.org/webdevsuperfast/recommendwp-widgets
 Bitbucket Plugin URI: https://bitbucket.org/webdevsuperfast/recommendwp-widgets
-License: GPL3
-License URI: https://www.gnu.org/licenses/gpl-3.0.txt
+Description: A collection of widgets for WordPress built using the SiteOrigin Widgets API.
+Version: 	1.3.12
+Author: 	RecommendWP
+Author URI: http://www.recommendwp.com
+License: GPL2
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: recommendwp-widgets
+Domain Path: /languages
 */
+
+defined( 'ABSPATH' ) or die( esc_html_e( 'With great power comes great responsibility.', 'animate-widgets' ) );
 
 class RecommendWP_Widgets {
 	public function __construct() {
@@ -34,7 +39,7 @@ class RecommendWP_Widgets {
 		}
 
 	}
-	
+
 	public function rwpw_enqueue_scripts() {
 		if ( ! is_admin() ) {
 			// Widget CSS
