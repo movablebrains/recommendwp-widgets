@@ -2,15 +2,6 @@
     $(document).on('panelsopen', function(e){
         var dialog = $(e.target);
         if ( !dialog.has('.siteorigin-widget-form-main-rwp-features-widget') ) return;
-        
-        /* $('.siteorigin-widget-field-icon_image').find('select').each(function(e){
-            var $this = $(this);
-            test($this);
-            $this.bind('change', function(){
-                test($(this).val());
-            });
-            $this.trigger('change');
-        }); */
         foundIt();
     });
     $(document).ready(function(){
