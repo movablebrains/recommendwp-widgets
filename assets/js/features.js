@@ -15,7 +15,7 @@
         foundIt();
     });
     function foundIt() {
-        var widgetID = $('.siteorigin-widget-field-repeater-item');
+        var widgetID = $('.siteorigin-widget-form-main-rwp-features-widget .siteorigin-widget-field-repeater-item');
         widgetID.each(function(e){
             var $this = $(this);
             var selectThis = $this.find('div[class*=icon_image]').find('select');
