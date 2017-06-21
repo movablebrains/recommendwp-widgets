@@ -12,10 +12,13 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
 class RecommendWP_Widgets {
 	public function __construct() {
+		// Enqueue Scripts
 		add_action( 'wp_enqueue_scripts', array( $this, 'rwpw_enqueue_scripts' ) );
 
+		// Add widgets folder to SiteOrigin Widgets
 		add_filter( 'siteorigin_widgets_widget_folders', array( $this, 'rwpw_widget_folders' ) );
 
+		// Enqueue Scripts related to RWP Features Widget
 		add_action( 'siteorigin_widgets_enqueue_admin_scripts_rwpw-features', array( $this, 'rwpw_features_admin_scripts' ), 10, 2 );
 
 		add_action( 'siteorigin_panel_enqueue_admin_scripts', array( $this, 'rwpw_features_admin_scripts' ) );
@@ -31,7 +34,7 @@ class RecommendWP_Widgets {
 		}
 
 	}
-
+	
 	public function rwpw_enqueue_scripts() {
 		if ( ! is_admin() ) {
 			// Widget CSS
