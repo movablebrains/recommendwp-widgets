@@ -16,8 +16,6 @@ class RecommendWP_Widgets {
 
 		add_filter( 'siteorigin_widgets_widget_folders', array( $this, 'rwpw_widget_folders' ) );
 
-		// add_filter( 'siteorigin_panels_widget_args', array( $this, 'rwpw_widget_args' ) );
-
 		add_action( 'siteorigin_widgets_enqueue_admin_scripts_rwpw-features', array( $this, 'rwpw_features_admin_scripts' ), 10, 2 );
 
 		add_action( 'siteorigin_panel_enqueue_admin_scripts', array( $this, 'rwpw_features_admin_scripts' ) );
@@ -62,12 +60,6 @@ class RecommendWP_Widgets {
 		$folders[] = plugin_dir_path( __FILE__ ) . 'widgets/';
 
 		return $folders;
-	}
-
-	public function rwpw_widget_args( $args ) {
-		$args['widget_id'] = $args['widget_id'] . '1';
-
-		return $args;
 	}
 }
 
