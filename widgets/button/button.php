@@ -161,7 +161,8 @@ class RWP_Button_Widget extends SiteOrigin_Widget {
         				'default' => 'left',
         				'options' => array(
         					'left' => __( 'Left', 'recommendwp-widgets' ),
-        					'right' => __( 'Rigt', 'recommendwp-widgets' )
+        					'right' => __( 'Right', 'recommendwp-widgets' ),
+							'center' => __( 'Center', 'recommendwp-widgets' )
         				)
         			)
         		)

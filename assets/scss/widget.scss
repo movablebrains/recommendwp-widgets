@@ -160,6 +160,12 @@ $image-path: '../../images';
 				top:-.1em;
 			}
 		}
+		&.icon-center {
+			[class^="sow-icon"] {
+				display: block;
+				margin: 0 auto 10px;
+			}
+		}
 		.button-wrap {
 			display: inline-block;
 			[class^="sow-icon"] {

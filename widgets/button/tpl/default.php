@@ -54,13 +54,18 @@ if ( is_array( $attrs ) && !is_wp_error( $attrs ) ) {
 
 	    		$icon = siteorigin_widget_get_icon( $icon, $icon_styles );
 			} ?>
-		<?php if ( 'left' === $icon_position  ) {
-			echo $icon;
-		} ?>
-    	<?php echo esc_html( $title ); ?>
-
-		<?php if ( 'right' === $icon_position ) {
-			echo $icon;
-		} ?>
+			<?php
+			switch ($icon_position ) {
+				case 'right':
+					echo esc_html( $title ) . $icon;
+					break;
+				case 'center':
+					echo $icon . esc_html( $title );
+					break;
+				case 'left':
+				default:
+					echo $icon . esc_html( $title );
+					break;
+			} ?>
 	</span>
 </a>
