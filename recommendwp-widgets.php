@@ -4,7 +4,7 @@ Plugin Name: RecommendWP Widgets
 Plugin URI: https://github.com/RecommendWP/recommendwp-widgets
 GitHub Plugin URI: https://github.com/RecommendWP/recommendwp-widgets
 Description: A collection of widgets for WordPress built using the SiteOrigin Widgets API.
-Version: 	1.3.16
+Version: 	1.3.17
 Author: 	RecommendWP
 Author URI: http://www.recommendwp.com
 License: GPL2
