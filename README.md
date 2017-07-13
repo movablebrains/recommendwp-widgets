@@ -4,7 +4,7 @@ RecommendWP Widgets is a collection of widgets that uses the SiteOrigin Widgets 
 
 ## Installation
 
-1. Download the compress file from the [Bitbucket](https://bitbucket.org/webdevsuperfast/recommendwp-widgets/get/8a008270b06e.zip) repository.
+1. Download latest release from [GitHub](https://github.com/RecommendWP/recommendwp-widgets/releases) repository.
 2. Extract and rename it to `recommendwp-widgets`.
 3. Copy or move the folder to your `plugins` folder.
 4. Activate. [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/) must be installed and activated first.
