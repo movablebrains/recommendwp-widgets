@@ -141,23 +141,21 @@ $image-path: '../../images';
 		cursor: pointer;
 		background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 		border: 1px solid transparent;
-		// white-space: nowrap;
-		white-space: normal;
-		line-height: 1;
+		white-space: nowrap;
 		text-decoration: none;
 		display: inline-block;
 		line-height: 1;
 		text-transform: uppercase;
 		&.icon-right {
 			[class^="sow-icon"] {
-				float: right;
+				top: -0.1em;
 				margin-left: 10px;
 			}
 		}
 		&.icon-left {
 			[class^="sow-icon"] {
 				margin-right: 10px;
-				top:-.1em;
+				top: -0.1em;
 			}
 		}
 		&.icon-center {
