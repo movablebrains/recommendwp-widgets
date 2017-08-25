@@ -95,7 +95,12 @@ class RWP_Image_Widget extends SiteOrigin_Widget {
 					'title' => array(
 						'type' => 'text',
 						'label' => __( 'Title', 'recommendwp-widgets' )
-					)
+					),
+					'target' => array(
+						'type' => 'checkbox',
+						'label' => __( 'Open in new tab', 'recommendwp-widgets' ),
+						'default' => false
+					),
 				)
 			),
 			'content' => array(
@@ -150,6 +155,7 @@ class RWP_Image_Widget extends SiteOrigin_Widget {
 			'height' => $instance['settings']['height'],
 			'alignment' => $instance['settings']['alignment'],
 			'url' => $instance['link']['url'],
+			'target' => $instance['link']['target'],
 			'url_title' => $instance['link']['title'],
 			'class' => $instance['seo']['class'],
 			'id' => $instance['seo']['id'],

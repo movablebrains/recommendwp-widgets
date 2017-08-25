@@ -22,10 +22,16 @@ if ( $image ) {
 	$attachment = wp_get_attachment_image_src( $image, 'full' );
 	$attributes['src'] = rwpw_thumb( $attachment[0], $width, $height, true );
 }
+
+if ( $target == true ) :
+	$target = '_blank';
+else :
+	$target = '_self';
+endif;
 ?>
 <div class="image-widget">
 	<?php echo $autop == true ? wpautop( $before, false ) : $before; ?>
-	<?php echo $url ? '<a href="'.sow_esc_url( $url ).'" title="'.$title.'">' : ''; ?>
+	<?php echo $url ? '<a target="'.$target.'" href="'.sow_esc_url( $url ).'" title="'.$title.'">' : ''; ?>
 		<img <?php foreach( $attributes as $name => $value ) echo $name . '="' . $value . '" ' ?> />
 	<?php echo $url ? '</a>' : ''; ?>
 	<?php echo $autop == true ? wpautop( $after, false ) : $after; ?>
