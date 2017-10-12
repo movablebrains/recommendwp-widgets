@@ -26,6 +26,8 @@ if ( $popup_type != 'none' ) {
 $attributes['class'] = esc_attr( implode( ' ', $classes ) );
 $attributes['target'] = esc_attr( $target );
 $attributes['href'] = sow_esc_url( $url );
+$attributes['onclick'] = esc_attr( '' );
+
 if ( $popup_type != 'none' ) {
 	$attributes['id'] = 'popup-' . (int)$widget_id;
 	$attributes['data-mfp-src'] = sow_esc_url( $url );
