@@ -4,7 +4,7 @@
   "description": "A collection of widgets for WordPress built using the SiteOrigin Widgets plugin API.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/RecommendWP/recommendwp-widgets"
+    "url": "git+https://github.com/RecommendWP/recommendwp-widgets.git"
   },
   "keywords": [
     "so-widgets-bundle",
@@ -14,22 +14,39 @@
   ],
   "author": "RecommendWP",
   "license": "GPL-3.0",
+  "dependencies": {
+    "bourbon": "^5.0.1",
+    "bourbon-neat": "3.0.0",
+    "magnific-popup": "^1.1.0",
+    "owl.carousel": "^2.3.4"
+  },
+  "bugs": {
+    "url": "https://github.com/RecommendWP/recommendwp-widgets/issues"
+  },
+  "homepage": "https://github.com/RecommendWP/recommendwp-widgets#readme",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-cache": "^0.4.6",
-    "gulp-changed": "^3.1.0",
-    "gulp-clean-css": "^3.9.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^3.9.4",
     "gulp-combine-mq": "^0.4.0",
     "gulp-concat": "^2.6.1",
-    "gulp-concat-css": "^2.3.0",
-    "gulp-flatmap": "^1.0.0",
-    "gulp-jsbeautifier": "^2.1.1",
-    "gulp-notify": "^3.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-jsbeautifier": "^2.1.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.3.0",
+    "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.0",
     "vinyl-paths": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
