@@ -32,8 +32,8 @@ gulp.task('styles', function(){
 // Vendor JS
 gulp.task('scripts', function(){
     return gulp.src([
-        'bower_components/owl.carousel/dist/owl.carousel.js',
-        'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+        'assets/js/vendor/*.js',
+        'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
         'assets/js/sources/*.js'
     ])
     .pipe(foreach(function(stream, file){
@@ -53,6 +53,14 @@ gulp.task('clean:temp', function(){
     .pipe(vinylpaths(del))
 });
 
+// Copy
+gulp.task('copy', function(){
+    return gulp.src(['node_modules/owl.carousel/dist/owl.carousel.js'], {
+        base: 'node_modules/owl.carousel/dist'
+    })
+    .pipe(gulp.dest('assets/js/vendor'));
+});
+
 // Default task
 gulp.task('default', ['clean:temp'], function() {
     gulp.start('styles', 'watch');
@@ -63,5 +71,5 @@ gulp.task('default', ['clean:temp'], function() {
 gulp.task('watch', function() {
     // Watch .scss files
     gulp.watch(['assets/scss/*.scss', 'assets/sass/**/*.scss'], ['styles']);
-    gulp.watch(['assets/js/sources/*.js'], ['scripts']);
+    gulp.watch(['assets/js/sources/*.js', 'assets/js/vendor/*.js'], ['scripts']);
 });
