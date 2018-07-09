@@ -15,17 +15,14 @@ $side-image-grid: (
 $image-path: '../../images';
 
 // Imports
-@import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '../../bower_components/neat/core/neat';
+@import '../../node_modules/bourbon/core/bourbon';
+@import '../../node_modules/bourbon-neat/core/neat';
 
 // Owl Carousel
-@import "../../bower_components/owl.carousel/src/scss/owl.carousel.scss";
+@import "../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 
 // Magnific Popup
-@import "../../bower_components/magnific-popup/src/css/main.scss";
-
-// Flex Mixin
-@import "../../bower_components/sass-flex-mixin/flex";
+@import "../../node_modules/magnific-popup/src//css/main.scss";
 
 //* Icons & Type Alignment Fix
 // @link http://snook.ca/archives/html_and_css/icons-and-type
@@ -118,7 +115,7 @@ $image-path: '../../images';
 		}
 	}
 	.side-image {
-		@include flexbox;
+		display: flex;
 		&.right-image {
 			.image-wrapper {
 				order: 2;
