@@ -60,7 +60,7 @@ class RecommendWP_Widgets {
 	}
 
 	public function rwpw_features_admin_scripts() {
-		wp_register_script( 'rwpw-features-js', plugin_dir_url( __FILE__ ) . 'assets/js/features.js', array( 'jquery' ), null, true );
+		wp_register_script( 'rwpw-features-js', plugin_dir_url( __FILE__ ) . 'assets/js/features.min.js', array( 'jquery' ), null, true );
 		wp_enqueue_script( 'rwpw-features-js' );
 	}
 
